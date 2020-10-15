@@ -1,3 +1,9 @@
+# Contributors
+Michael Goldberg
+Ashliegh Lyman
+Emily Richter
+Richard Krasso
+
 # Nodebucket
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
