@@ -1,5 +1,5 @@
 # Contributors
-Michael Goldberg
+Mike Goldberg
 Ashliegh Lyman
 Emily Richter
 Richard Krasso
