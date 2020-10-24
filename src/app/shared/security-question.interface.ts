@@ -8,13 +8,7 @@
 ;===========================================
 */
 
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `<router-outlet></router-outlet>`,
-  styles: [``]
-})
-export class AppComponent {
-
+export interface SecurityQuestion {
+  _id: string;
+  text: string;
 }

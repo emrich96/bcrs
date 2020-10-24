@@ -8,13 +8,11 @@
 ;===========================================
 */
 
-import { Component } from '@angular/core';
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-@Component({
-  selector: 'app-root',
-  template: `<router-outlet></router-outlet>`,
-  styles: [``]
+let userRoleSchema  = new Schema({
+  role: { type: String, default: 'Standard' }
 })
-export class AppComponent {
 
-}
+module.exports = userRoleSchema;

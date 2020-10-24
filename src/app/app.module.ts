@@ -1,3 +1,13 @@
+/*
+============================================
+; Title: BCRS
+; Authors: Mike Goldberg, Emily Richter, Ashliegh Lyman
+; Date: 10/20/2020
+; Modified By: Mike Goldberg
+; Description: E2E MEAN Stack Application
+;===========================================
+*/
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -13,13 +23,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './pages/signin/signin.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BaseLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    SigninComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
