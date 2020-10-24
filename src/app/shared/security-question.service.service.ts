@@ -25,19 +25,19 @@ export class SecurityQuestionServiceService {
 
 // findAllSecurityQuestions Service API route
   findAllSecurityQuestions(): Observable<any> {
-    return this.http.get('/api/security-question');
+    return this.http.get('/api/security-questions');
   }
 
 
 // findAllSecurityQuestionsById Service API route
   findAllSecurityQuestionsById(questionId: string): Observable<any> {
-    return this.http.get('/api/security-question/' + questionId);
+    return this.http.get('/api/security-questions/' + questionId);
   }
 
 
 // createSecurityQuestionsById Service API route
   createSecurityQuestionsById(newSecurityQuestion: SecurityQuestion): Observable<any> {
-    return this.http.post('/api/security-question', {
+    return this.http.post('/api/security-questions', {
       text: newSecurityQuestion.text
     });
   }
@@ -45,7 +45,7 @@ export class SecurityQuestionServiceService {
 
 // updateSecurityQuestionsById Service API route
   updateSecurityQuestionsById(questionId: string, updatedSecurityQuestion: SecurityQuestion): Observable<any> {
-    return this.http.put('/api/security-question/' + questionId, {
+    return this.http.put('/api/security-questions/' + questionId, {
       text: updatedSecurityQuestion.text
     });
   }
@@ -53,6 +53,6 @@ export class SecurityQuestionServiceService {
 
 // deleteSecurityQuestionsById Service API route
   deleteSecurityQuestionsById(questionId: string): Observable<any> {
-    return this.http.delete('/api/security-question/' + questionId);
+    return this.http.delete('/api/security-questions/' + questionId);
   }
 }

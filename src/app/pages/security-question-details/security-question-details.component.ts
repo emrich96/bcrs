@@ -55,13 +55,13 @@ export class SecurityQuestionDetailsComponent implements OnInit {
     updatedSecurityQuestion.text = this.form.controls.text.value;
 
     this.securityQuestionServiceService.updateSecurityQuestionsById(this.questionId, updatedSecurityQuestion).subscribe(res => {
-      this.router.navigate(['/security-question']);
+      this.router.navigate(['/security-questions']);
     });
   }
 
   // tslint:disable-next-line: typedef
   cancel() {
-    this.router.navigate(['/security-question']);
+    this.router.navigate(['/security-questions']);
   }
 
 }

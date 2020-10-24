@@ -59,7 +59,7 @@ mongoose.connect(conn, {
  * API(s) go here...
  */
 app.use('/api/user', UserApi); //localhost:3000/api/user
-app.use('/api/security-question', SecurityQuestionApi); //localhost:3000/api/security-question
+app.use('/api/security-questions', SecurityQuestionApi); //localhost:3000/api/security-question
 app.use('/api/session', SessionApi); //localhost:3000/api/session
 
 /**

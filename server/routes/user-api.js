@@ -97,7 +97,7 @@ router.post('/', async(req, res) => {
 });
 
 // updateUser
-router.put('/', async(req, res) => {
+router.put('/:id', async(req, res) => {
     try {
         User.findOne({ '_id': req.params.id }, function(err, user) {
             if (err) {

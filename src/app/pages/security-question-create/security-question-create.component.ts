@@ -11,7 +11,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
-import { SecurityQuestion } from './../../shared/security-question.interface';
+import { SecurityQuestion } from '../../shared/security-question.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SecurityQuestionServiceService } from 'src/app/shared/security-question.service.service';
 import { Router } from '@angular/router';
@@ -45,12 +45,12 @@ export class SecurityQuestionCreateComponent implements OnInit {
     newSecurityQuestion.text = this.form.controls.text.value;
 
     this.securityQuestionServiceService.createSecurityQuestionsById(newSecurityQuestion).subscribe(res => {
-      this.router.navigate(['/security-question']);
+      this.router.navigate(['/security-questions']);
     });
   }
 
   // tslint:disable-next-line: typedef
   cancel() {
-    this.router.navigate(['/security-question']);
+    this.router.navigate(['/security-questions']);
   }
 }
