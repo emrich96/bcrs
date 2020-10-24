@@ -1,7 +1,7 @@
 /*
 ============================================
 ; Title: BCRS
-; Authors: Mike Goldberg, Emily Richter, Ashliegh Lyman
+; Authors: Mike Goldberg, Emily Richter, Ashleigh Lyman
 ; Date: 10/20/2020
 ; Modified By: Mike Goldberg
 ; Description: E2E MEAN Stack Application
@@ -20,9 +20,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 export class AuthGuard implements CanActivate {
 
-  constructor(
-    private router: Router, private cookieService: CookieService
-  ) { }
+  constructor(private router: Router, private cookieService: CookieService) { }
 
   // canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
   canActivate(
@@ -35,7 +33,7 @@ export class AuthGuard implements CanActivate {
         return true;
       } else {
         this.router.navigate(['/session/signin']);
-        return false
+        return false;
       }
   }
 

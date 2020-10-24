@@ -1,7 +1,7 @@
 /*
 ============================================
 ; Title: BCRS
-; Authors: Mike Goldberg, Emily Richter, Ashliegh Lyman
+; Authors: Mike Goldberg, Emily Richter, Ashleigh Lyman
 ; Date: 10/20/2020
 ; Modified By: Mike Goldberg
 ; Description: E2E MEAN Stack Application
@@ -25,6 +25,7 @@ export class SigninComponent implements OnInit {
 
   constructor(private router: Router, private cookieService: CookieService, private fb: FormBuilder, private http: HttpClient) { }
 
+  // Validates the user sign in data with parameters
   ngOnInit(): void {
     this.form = this.fb.group({
       userName: [null, Validators.compose([Validators.required])],
@@ -32,6 +33,9 @@ export class SigninComponent implements OnInit {
     });
   }
 
+
+  // Sign in route navigation
+  // tslint:disable-next-line: typedef
   signin() {
     const userName = this.form.controls.userName.value;
     const password = this.form.controls.password.value;
