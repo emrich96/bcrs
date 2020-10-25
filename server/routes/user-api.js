@@ -122,7 +122,7 @@ router.put('/:id', async(req, res) => {
                         res.status(500).send(savedUserMongoDbErrorResponse.toObject());
                     } else {
                         console.log(savedUser);
-                        const savedUserResponse = new BaseResponse(200, "Query successful", user);
+                        const savedUserResponse = new BaseResponse(200, "Query successful", savedUser);
                         res.json(savedUserResponse.toObject());
                     }
                 })
@@ -136,7 +136,7 @@ router.put('/:id', async(req, res) => {
 });
 
 // delete user
-router.delete('/', async(req, res) => {
+router.delete('/:id', async(req, res) => {
     try {
         User.findOne({ '_id': req.params.id }, function(err, user) {
             if (err) {
