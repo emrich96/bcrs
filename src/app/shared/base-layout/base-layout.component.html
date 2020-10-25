@@ -11,9 +11,9 @@
                 <!-- logo -->
                 <button class="logo" routerLink="/" mat-button>BCRS</button>
 
-                <button class="navbar-link" routerLink="/" mat-button>Home</button>
-                <button class="navbar-link" routerLink="/about">About</button>
-                <button class="navbar-link" routerLink="/contact">Contact Us</button>
+                <button class="navbar-link" mat-button routerLink="/">Home</button>
+                <button class="navbar-link" mat-button routerLink="/about">About</button>
+                <button class="navbar-link" mat-button (click)="signOut()">Sign Out</button>
             </div>
 
         </mat-toolbar>
