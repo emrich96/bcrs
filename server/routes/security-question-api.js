@@ -93,7 +93,7 @@ router.post('/', async(req, res) => {
 
 
 // UpdateSecurityQuestion
-router.put('/', async(req, res) => {
+router.put('/:id', async(req, res) => {
     try {
         SecurityQuestion.findOne({ '_id': req.params.id }, function(err, securityQuestion) {
             if (err) {
