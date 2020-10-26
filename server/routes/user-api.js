@@ -67,6 +67,9 @@ router.get('/:id', async(req, res) => {
 router.post('/', async(req, res) => {
     try {
         let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds); // salt/hash the password
+        standardRole = {
+          role: 'Standard'
+        }
 
         let newUser = {
             userName: req.body.userName,
@@ -75,7 +78,8 @@ router.post('/', async(req, res) => {
             lastName: req.body.lastName,
             phoneNumber: req.body.phoneNumber,
             address: req.body.address,
-            email: req.body.email
+            email: req.body.email,
+            role: standardRole
         }
 
         User.create(newUser, function(err, user) {

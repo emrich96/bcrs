@@ -24,12 +24,12 @@ import { UserService } from 'src/app/shared/user.service.service';
 export class UserListComponent implements OnInit {
 
   users: User[];
-  displayedColumns = ['userName','firstName','lastName','phoneNumber','address','email','functions'];
+  displayedColumns: string[] = ['userName','firstName','lastName','phoneNumber','address','email','functions'];
 
   constructor(private http: HttpClient, private dialog: MatDialog, private userService: UserService) {
 
     this.userService.findAllUsers().subscribe(res => {
-      this.users = res['data'];
+      this.users = res.data;
       console.log(this.users);
     }, err => {
       console.log(err)
