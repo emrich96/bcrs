@@ -122,7 +122,7 @@ router.put('/:id', async(req, res) => {
                         res.status(500).send(savedUserMongoDbErrorResponse.toObject());
                     } else {
                         console.log(savedUser);
-                        const savedUserResponse = new BaseResponse(200, "Query successful", user);
+                        const savedUserResponse = new BaseResponse(200, "Query successful", savedUser);
                         res.json(savedUserResponse.toObject());
                     }
                 })

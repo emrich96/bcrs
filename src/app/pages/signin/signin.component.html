@@ -1,6 +1,72 @@
 <!--Sign in Component html page-->
+<div fxLayout="column" class="signin-body">
 
-<p>signin works!</p>
+  <mat-card fxFlex class="mat-elevation-z8 signin-container">
+    <mat-card-title>BCRS Employee Portal</mat-card-title>
 
+    <mat-card-content>
+      <div class="msg-container" *ngIf="errorMessage">
+        <div class="msg-error">
+          {{ errorMessage }}
+        </div>
+      </div>
 
+      <mat-card class="mat-elevation-z0 form-container" fxLayout="column" fxLayoutGap="10px">
+
+        <form [formGroup]="form" (ngSubmit)="signin();">
+          <mat-card-content>
+
+              <mat-form-field appearance="fill" style="width: 100%">
+                <mat-label for="userName" id="lblUserName">User Name</mat-label>
+                <input
+                  id="userName"
+                  name="userName"
+                  type="text"
+                  required
+                  matInput
+                  [formControl]="form.controls['userName']"
+                />
+                <!-- validation messages -->
+                <mat-error *ngIf="form.controls['userName'].hasError('required') && form.controls['userName'].touched">
+                  User Name is a required field
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" style="width: 100%">
+                <mat-label for="password" id="lblUserName">Password</mat-label>
+                <input
+                  id="password"
+                  name="password"
+                  type="text"
+                  required
+                  matInput
+                  [formControl]="form.controls['password']"
+                />
+                <!-- validation messages -->
+                <mat-error *ngIf="form.controls['userName'].hasError('required') && form.controls['password'].touched">
+                  Password is a required field
+                </mat-error>
+              </mat-form-field>
+          </mat-card-content>
+
+          <mat-card-actions>
+            <button type="submit" fxFlex mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
+          </mat-card-actions>
+        </form>
+
+        <mat-card-content>
+          <div class="text-right">
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <div class="create-account-link">
+            New User? Create account <mat-icon>east</mat-icon>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
 <!--End Page-->
