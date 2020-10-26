@@ -136,7 +136,7 @@ router.put('/:id', async(req, res) => {
 });
 
 // delete user
-router.delete('/', async(req, res) => {
+router.delete('/:id', async(req, res) => {
     try {
         User.findOne({ '_id': req.params.id }, function(err, user) {
             if (err) {
