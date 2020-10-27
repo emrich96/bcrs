@@ -9,11 +9,42 @@
             <!-- navbar container -->
             <div class="navbar-container">
                 <!-- logo -->
-                <button class="logo" routerLink="/" mat-button>BCRS</button>
-
-                <button class="navbar-link" mat-button routerLink="/">Home</button>
-                <button class="navbar-link" mat-button routerLink="/about">About</button>
-                <button class="navbar-link" mat-button (click)="signOut()">Sign Out</button>
+                <button class="navbar-link" routerLink="/" mat-button>BCRS</button>
+                <div>
+                  <button [matMenuTriggerFor]="adminMenu" mat-button class="navbar-link">
+                    Admin
+                  </button>
+                  <mat-menu #adminMenu="matMenu" x-position="before">
+                    <div class="sub-menu">
+                      <div>
+                        <button mat-menu-item class="sub-nav-item" routerLink="/users">
+                          Manage Users
+                        </button>
+                        <button mat-menu-item class="sub-nav-item" routerLink="/">
+                          Manage Services
+                        </button>
+                      </div>
+                    </div>
+                  </mat-menu>
+                  <button class="navbar-link" mat-button routerLink="/">Services</button>
+                  <button class="navbar-link" mat-button routerLink="/about">About</button>
+                  <!-- <button class="navbar-link" mat-button (click)="signOut()">Sign Out</button> -->
+                  <button [matMenuTriggerFor]="accountMenu" class="account-menu" mat-icon-button style="margin-top: -.5rem;">
+                    <mat-icon>account_circle</mat-icon>
+                  </button>
+                  <mat-menu #accountMenu="matMenu" x-position="before">
+                    <div class="sub-menu">
+                      <div>
+                        <button mat-menu-item class="sub-nav-item" routerLink="/">
+                          Reset Password
+                        </button>
+                        <button mat-menu-item class="sub-nav-item" (click)="signOut()">
+                          Sign Out
+                        </button>
+                      </div>
+                    </div>
+                  </mat-menu>
+                </div>
             </div>
 
         </mat-toolbar>

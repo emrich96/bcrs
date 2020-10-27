@@ -37,6 +37,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTableModule,
     MatInputModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

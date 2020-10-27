@@ -1,14 +1,13 @@
 /*Base layout component CSS page*/
-
-.logo {
-    margin-left: 75px;
-    font-size: 24px;
-    font-weight: lighter;
-    ;
-}
-
 .navbar-container {
+    width: 100%;
     padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-container .mat-icon-button .mat-icon {
+  line-height: .70;
 }
 
 .navbar-link {
