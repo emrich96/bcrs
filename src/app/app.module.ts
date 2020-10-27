@@ -38,6 +38,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MatMenuModule } from '@angular/material/menu';
     UserCreateComponent,
     UserDetailsComponent,
     UserListComponent,
-    DeleteRecordDialogComponent
+    DeleteRecordDialogComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
