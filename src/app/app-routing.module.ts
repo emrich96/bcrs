@@ -79,6 +79,10 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path:'**',
+    redirectTo: 'session/not-found'
+  }
 ];
 
 @NgModule({
