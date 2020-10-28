@@ -1,0 +1,25 @@
+.aboutSection {
+    padding-left: 50%;
+}
+
+.aboutContainer {
+    padding-right: 50%;
+}
+
+.contactContainer {
+    padding-right: 50%;
+}
+
+.title {
+    text-align: center;
+    font-size: 200%;
+}
+
+hr {
+    width: 98%;
+}
+
+.column {
+    float: left;
+    width: 15%;
+}
