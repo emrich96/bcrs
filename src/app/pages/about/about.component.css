@@ -1,5 +1,6 @@
-.aboutSection {
-    padding-left: 50%;
+.title {
+    text-align: center;
+    font-size: 200%;
 }
 
 .aboutContainer {
@@ -8,11 +9,6 @@
 
 .contactContainer {
     padding-right: 50%;
-}
-
-.title {
-    text-align: center;
-    font-size: 200%;
 }
 
 hr {
