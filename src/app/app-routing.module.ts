@@ -24,6 +24,11 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { UserCreateComponent } from './pages/user-create/user-create.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { VerifyUserNameComponent } from './pages/verify-user-name/verify-user-name.component';
+import { VerifySecurityQuestionsComponent } from './pages/verify-security-questions/verify-security-questions.component';
+import { ErrorComponent } from './pages/error/error.component';
+
 
 const routes: Routes = [
   {
@@ -55,7 +60,8 @@ const routes: Routes = [
         component: SecurityQuestionListComponent
       },
       {
-        path: 'security-questions/:userId',
+        // path: 'security-questions/:userId',
+        path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent
       },
       {
@@ -74,8 +80,24 @@ const routes: Routes = [
         component: SigninComponent
       },
       {
-        path: 'not-found',
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'forgot',
+        component: VerifyUserNameComponent
+      },
+      {
+        path: 'verify-security-questions',
+        component: VerifySecurityQuestionsComponent
+      },
+      {
+        path: '404',
         component: NotFoundComponent
+      },
+      {
+        path: '500',
+        component: ErrorComponent
       }
     ]
   },
