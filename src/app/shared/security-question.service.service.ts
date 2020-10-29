@@ -37,7 +37,7 @@ export class SecurityQuestionServiceService {
 
 // createSecurityQuestionsById Service API route
   createSecurityQuestionsById(newSecurityQuestion: SecurityQuestion): Observable<any> {
-    return this.http.post('/api/security-questions', {
+    return this.http.post('/api/security-questions/', {
       text: newSecurityQuestion.text
     });
   }
