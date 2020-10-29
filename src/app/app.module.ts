@@ -20,7 +20,7 @@ import { DeleteRecordDialogComponent } from './shared/delete-record-dialog/delet
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
@@ -39,6 +39,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { AboutComponent } from './pages/about/about.component';
+import { ErrorInterceptor } from './shared/error.interceptor';
+import { RegisterComponent } from './pages/register/register.component';
+import { VerifyUserNameComponent } from './pages/verify-user-name/verify-user-name.component';
+import { VerifySecurityQuestionsComponent } from './pages/verify-security-questions/verify-security-questions.component';
+import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +61,12 @@ import { AboutComponent } from './pages/about/about.component';
     UserDetailsComponent,
     UserListComponent,
     DeleteRecordDialogComponent,
-    AboutComponent
+    AboutComponent,
+    RegisterComponent,
+    VerifyUserNameComponent,
+    VerifySecurityQuestionsComponent,
+    ResetPasswordFormComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +86,11 @@ import { AboutComponent } from './pages/about/about.component';
     MatDialogModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
