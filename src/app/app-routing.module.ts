@@ -15,7 +15,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { HomeComponent } from './pages/home/home.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
-import { AboutComponent } from './pages/about/about.component'
+import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
@@ -80,7 +80,7 @@ const routes: Routes = [
     ]
   },
   {
-    path:'**',
+    path: '**',
     redirectTo: 'session/not-found'
   }
 ];

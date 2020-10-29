@@ -24,14 +24,16 @@ import { SecurityQuestion } from './../../shared/security-question.interface';
 })
 export class SecurityQuestionListComponent implements OnInit {
 
-  securityQuestion: SecurityQuestion[];
-  displayedColumns: ['question', 'functions'];
+  securityQuestions: SecurityQuestion[];
+  displayedColumns: string[] = ['question', 'functions'];
 
 
 // return security question service data and subscribe to data
   constructor(private http: HttpClient, private dialog: MatDialog, private securityQuestionServiceService: SecurityQuestionServiceService) {
+
     this.securityQuestionServiceService.findAllSecurityQuestions().subscribe(res => {
-      this.securityQuestion = res.data;
+      this.securityQuestions = res.data;
+      console.log(this.securityQuestions);
     }, err => {
       console.log(err);
     });
@@ -46,12 +48,12 @@ export class SecurityQuestionListComponent implements OnInit {
     Calls dialog box with message and options
   */
   // tslint:disable-next-line: typedef
-  delete(recordId: string) {
+  delete(recordText: string, recordId: string) {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
-        recordId,
+        recordText,
         dialogHeader: `Delete Record Dialog`,
-        dialogBody: `Are you sure you want to delete security question ${recordId}?`
+        dialogBody: `Are you sure you want to delete security question <strong>${recordText}</strong>?`
       },
       disableClose: true,
       width: `800px`
@@ -61,7 +63,7 @@ export class SecurityQuestionListComponent implements OnInit {
       if (result === 'confirm') {
         this.securityQuestionServiceService.deleteSecurityQuestionsById(recordId).subscribe(res => {
           console.log(`Security question deleted`);
-          this.securityQuestion = this.securityQuestion.filter(q => q._id !== recordId);
+          this.securityQuestions = this.securityQuestions.filter(q => q._id !== recordId);
         });
       }
     });
