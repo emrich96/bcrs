@@ -48,12 +48,12 @@ export class SecurityQuestionListComponent implements OnInit {
     Calls dialog box with message and options
   */
   // tslint:disable-next-line: typedef
-  delete(recordId: string) {
+  delete(recordText: string, recordId: string) {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
-        recordId,
+        recordText,
         dialogHeader: `Delete Record Dialog`,
-        dialogBody: `Are you sure you want to delete security question ${recordId}?`
+        dialogBody: `Are you sure you want to delete security question <strong>${recordText}</strong>?`
       },
       disableClose: true,
       width: `800px`
