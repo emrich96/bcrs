@@ -22,7 +22,7 @@
                 <ng-container matColumnDef="functions">
                     <th mat-header-cell *matHeaderCellDef>Functions</th>
                     <td mat-cell *matCellDef="let element">
-                      <button mat-icon-button routerLink="/security-question/{{element._id}}">
+                      <button mat-icon-button routerLink="/security-questions/{{element._id}}">
                         <mat-icon color="primary">edit</mat-icon>
                       </button>
                       <button mat-icon-button (click)="delete(element._id)">
