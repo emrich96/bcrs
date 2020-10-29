@@ -24,14 +24,16 @@ import { SecurityQuestion } from './../../shared/security-question.interface';
 })
 export class SecurityQuestionListComponent implements OnInit {
 
-  securityQuestion: SecurityQuestion[];
-  displayedColumns: ['question', 'functions'];
+  securityQuestions: SecurityQuestion[];
+  displayedColumns: string[] = ['question', 'functions'];
 
 
 // return security question service data and subscribe to data
   constructor(private http: HttpClient, private dialog: MatDialog, private securityQuestionServiceService: SecurityQuestionServiceService) {
+
     this.securityQuestionServiceService.findAllSecurityQuestions().subscribe(res => {
-      this.securityQuestion = res.data;
+      this.securityQuestions = res.data;
+      console.log(this.securityQuestions);
     }, err => {
       console.log(err);
     });
@@ -61,7 +63,7 @@ export class SecurityQuestionListComponent implements OnInit {
       if (result === 'confirm') {
         this.securityQuestionServiceService.deleteSecurityQuestionsById(recordId).subscribe(res => {
           console.log(`Security question deleted`);
-          this.securityQuestion = this.securityQuestion.filter(q => q._id !== recordId);
+          this.securityQuestions = this.securityQuestions.filter(q => q._id !== recordId);
         });
       }
     });
