@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+    font-size: 200%;
+}
+
+.aboutContainer {
+    padding-right: 50%;
+}
+
+.contactContainer {
+    padding-right: 50%;
+}
+
+hr {
+    width: 98%;
+}
+
+.column {
+    float: left;
+    width: 15%;
+}

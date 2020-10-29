@@ -1,0 +1,94 @@
+/*Sign in Component CSS page*/
+.signin-body {
+  background-color: rgba(0,0,0,.2);
+  height: 100%;
+}
+.signin-container {
+  width: 55%;
+  margin: 15% auto;
+  max-width: 565px;
+}
+
+.signin-container .mat-card-title {
+  padding: 2rem;
+  background-color: rgba(0,0,0,.6);
+  color: #fff;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: -1rem!important;
+  font-weight: 300;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.signin-container mat-card-subtitle:not(:first-child) {
+  text-align: center;
+  margin-bottom: .5rem;
+  margin-top: 1.5rem;
+}
+
+.signin-container .mat-card-content {
+  margin-bottom: 0;
+}
+
+.signin-container .mat-card-actions {
+  margin: 0;
+}
+
+.signin-container .mat-raised-button {
+  padding: .65rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.signin-container .mat-raised-button:not(.mat-button-disabled) {
+  color: #fff;
+}
+/* .mat-raised-button.mat-primary:not(.mat-button-disabled) {
+  background-color: rgba(0,0,0,.6);
+} */
+.form-container {
+  max-width: 410px;
+  margin: 0 auto;
+}
+
+.msg-container {
+  padding: 0 16px;
+}
+
+.msg-error {
+  margin: 0px;
+  padding: 12px;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  text-align: center;
+}
+
+.form-container .text-right {
+  margin-top: -1rem;
+}
+.create-account-link {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-account-link .mat-icon {
+  margin-left: .25rem
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .signin-container {
+    width: 95%;
+  }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .signin-container {
+    width: 65%;
+  }
+}
