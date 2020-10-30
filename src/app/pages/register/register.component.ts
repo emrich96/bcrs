@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { SecurityQuestion } from 'src/app/shared/security-question.interface';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
