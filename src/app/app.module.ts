@@ -34,9 +34,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { AboutComponent } from './pages/about/about.component';
 import { ErrorInterceptor } from './shared/error.interceptor';
@@ -84,7 +88,11 @@ import { ErrorComponent } from './pages/error/error.component';
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule,
+    MatSelectModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [
     {
