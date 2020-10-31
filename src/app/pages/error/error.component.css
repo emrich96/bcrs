@@ -1,0 +1,14 @@
+.error-container {
+  height: 100vh;
+  width: 60%;
+  margin: 0 auto;
+  align-items: center;
+  padding-top: 15vh;
+  padding-left: 30px;
+}
+
+.text-box {
+  border-left: 10px solid black;
+  padding-left: 15px;
+  max-height: 63vh;
+}

@@ -17,6 +17,7 @@ const BaseResponse = require('../services/base-response');
 
 //  configurations
 const router = express.Router();
+const saltRounds = 10; //default salt rounds for hashing
 
 // User sign-in
 router.post('/signin', async(req, res) => {
@@ -59,7 +60,7 @@ router.post('/signin', async(req, res) => {
 });
 
 // Register
-router.post('/', async(req, res) => {
+router.post('/register', async(req, res) => {
   try {
     User.findOne({'userName': req.body.userName}, function (err, user) {
       if (err) {
