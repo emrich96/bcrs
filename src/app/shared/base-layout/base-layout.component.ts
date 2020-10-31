@@ -26,6 +26,11 @@ export class BaseLayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  resetPass() {
+    const username = this.cookieService.get('sessionUser');
+    this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
+  }
+
   signOut() {
     this.cookieService.deleteAll()
     this.router.navigate(['/session/signin']);

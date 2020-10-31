@@ -38,7 +38,7 @@
                   <mat-menu #accountMenu="matMenu" x-position="before">
                     <div class="sub-menu">
                       <div>
-                        <button mat-menu-item class="sub-nav-item" routerLink="/">
+                        <button mat-menu-item class="sub-nav-item" (click)="resetPass()">
                           Reset Password
                         </button>
                         <button mat-menu-item class="sub-nav-item" (click)="signOut()">
