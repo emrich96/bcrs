@@ -27,6 +27,7 @@ import { UserListComponent } from './pages/user-list/user-list.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { VerifyUserNameComponent } from './pages/verify-user-name/verify-user-name.component';
 import { VerifySecurityQuestionsComponent } from './pages/verify-security-questions/verify-security-questions.component';
+import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { ErrorComponent } from './pages/error/error.component';
 
 
@@ -60,7 +61,7 @@ const routes: Routes = [
         component: SecurityQuestionListComponent
       },
       {
-        // path: 'security-questions/:userId',
+        // path: 'security-questions/:userName',
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent
       },
@@ -90,6 +91,10 @@ const routes: Routes = [
       {
         path: 'verify-security-questions',
         component: VerifySecurityQuestionsComponent
+      },
+      {
+        path: 'reset-password',
+        component: ResetPasswordFormComponent
       },
       {
         path: '404',

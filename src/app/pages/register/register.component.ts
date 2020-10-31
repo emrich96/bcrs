@@ -92,7 +92,7 @@ export class RegisterComponent implements OnInit {
       selectedSecurityQuestions: selectedSecurityQuestions
     }).subscribe(res => {
       if (res['data']) {
-        this.cookieService.set('sessionuser', credentials.userName, 1);
+        this.cookieService.set('sessionUser', credentials.userName, 1);
         this.router.navigate(['/']);
       } else {
         // user is not authenticated and need to return error
