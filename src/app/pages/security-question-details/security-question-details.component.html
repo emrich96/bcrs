@@ -1,6 +1,13 @@
-<!--Security Questions Details html page-->
+<mat-dialog-content fxFlex fxLayout="column" [formGroup]="questionForm">
+  <h2 mat-dialog-title>Edit Security Questions</h2>
 
-<p>security-question-details works!</p>
+  <mat-form-field>
+      <input type="text" placeholder="Question" matInput formControlName="text" [value]="questionData.text"/>
+  </mat-form-field>
 
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button (click)="cancel()" color="primary">Cancel</button>
+    <button mat-raised-button (click)="updateUser()"  color="accent">Update</button>
+  </div>
+</mat-dialog-content>
 
-<!--End Page-->

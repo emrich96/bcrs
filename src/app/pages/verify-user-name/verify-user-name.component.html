@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div style="width: 90%;">
+      <p style="text-align: center; padding-left: 10%; font-weight: lighter;">
+        BCRS
+      </p>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div fxLayout="row wrap" fxLayoutAlign="center start" style="margin-top: 65px;">
+  <div fxFlex.gt-sm="55" fxFlex="100">
+    <mat-card style="width: 80%;" class="mat-card-top pa-0">
+      <mat-card-title style="text-align: center; font-size: 36px; font-weight: lighter;" class="mat-headline">
+        Verify Username
+      </mat-card-title>
+      <br/><br/>
+
+      <form [formGroup]="form" (ngSubmit)="validateUsername()" id="validateUsernameForm">
+        <mat-card-content fxLayout="column">
+          <mat-form-field fxFlex>
+            <input matInput type="text" [formControl]="form.controls['username']" placeholder="Enter Username" />
+          </mat-form-field>
+          <br/><br/>
+
+          <div fxFlex fxLayoutAlign="end">
+            <button mat-raised-button color="accent">Next</button>
+          </div>
+        </mat-card-content>
+      </form>
+    </mat-card>
+    <a routerLink="/session/signin">Return</a>
+  </div>
+</div>

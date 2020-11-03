@@ -10,11 +10,11 @@
 
 
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { SecurityQuestionServiceService } from './../../shared/security-question.service.service';
 import { DeleteRecordDialogComponent } from '../../shared/delete-record-dialog/delete-record-dialog.component';
 import { SecurityQuestion } from './../../shared/security-question.interface';
+import { SecurityQuestionDetailsComponent } from '../security-question-details/security-question-details.component'
 
 
 @Component({
@@ -29,7 +29,7 @@ export class SecurityQuestionListComponent implements OnInit {
 
 
 // return security question service data and subscribe to data
-  constructor(private http: HttpClient, private dialog: MatDialog, private securityQuestionServiceService: SecurityQuestionServiceService) {
+  constructor(private dialog: MatDialog, private securityQuestionServiceService: SecurityQuestionServiceService) {
 
     this.securityQuestionServiceService.findAllSecurityQuestions().subscribe(res => {
       this.securityQuestions = res.data;
@@ -40,7 +40,32 @@ export class SecurityQuestionListComponent implements OnInit {
    }
 
   // tslint:disable-next-line: typedef
-  ngOnInit() {
+  ngOnInit(): void{
+  }
+
+  edit(id, question) {
+    const dialogRef = this.dialog.open(SecurityQuestionDetailsComponent, {
+      data: {
+        questionData: question
+      },
+      disableClose: true,
+      width: '800px'
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      if (data) {
+        console.log(data)
+        this.securityQuestionServiceService.updateSecurityQuestionsById(id, data).subscribe(() => {
+          console.log('question Updated');
+          this.securityQuestionServiceService.findAllSecurityQuestions().subscribe(res => {
+            this.securityQuestions = res.data;
+            console.log(this.securityQuestions);
+          }, err => {
+            console.log(err);
+          });
+        })
+      }
+    })
   }
 
   /*

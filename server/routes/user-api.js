@@ -64,6 +64,7 @@ router.get('/:id', async(req, res) => {
 
 
 // createUser
+// Move to session!xx
 router.post('/', async(req, res) => {
     try {
         let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds); // salt/hash the password
@@ -93,7 +94,7 @@ router.post('/', async(req, res) => {
                 res.json(createUserResponse.toObject());
             }
         })
-    } catch (error) {
+    } catch (e) {
         console.log(e);
         const createUserCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
         res.status(500).send(createUserCatchErrorResponse.toObject());
@@ -168,10 +169,31 @@ router.delete('/:id', async(req, res) => {
             }
         })
     } catch (e) {
-        console.log(e);
-        const deleteUserCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
-        res.status(500).send(deleteUserCatchErrorResponse.toObject());
+      console.log(e);
+      const deleteUserCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+      res.status(500).send(deleteUserCatchErrorResponse.toObject());
     }
+});
+
+// FindSelectedSecurityQuestions
+router.get('/:userName/security-questions', async (req, res) => {
+  try {
+    User.findOne({'userName': req.params.userName}, function(err, user) {
+      if (err) {
+        console.log(err);
+        const findSelectedSecurityQuestionsMongoDbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+        res.status(500).send(findSelectedSecurityQuestionsMongoDbErrorResponse.toObject());
+      } else {
+        console.log(user);
+        const deleteUserResponse = new BaseResponse(200, "Query successful", user.selectedSecurityQuestions);
+        res.json(deleteUserResponse.toObject());
+      }
+    })
+  } catch (e) {
+    console.log(e);
+    const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
+  }
 });
 
 module.exports = router;

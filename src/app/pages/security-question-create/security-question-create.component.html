@@ -1,5 +1,21 @@
-<!--Security Questions Create html page-->
-<div>Create new Security Question works!</div>
+<div fxLayout="column" class="card">
+  <mat-card [formGroup]="form">
 
+    <mat-card-content fxFlex fxLayout="column" [formGroup]="form">
+      <mat-card-title style="padding-top: 30px;">
+        Add new security question
+      </mat-card-title>
 
-<!--End Page-->
+      <mat-form-field>
+        <mat-label>Question</mat-label>
+        <input type="text" matInput formControlName="text" />
+      </mat-form-field>
+
+      <mat-card-actions align="end">
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button mat-button [disabled]="!form.valid" (click)="create()">Create</button>
+      </mat-card-actions>
+
+    </mat-card-content>
+  </mat-card>
+</div>

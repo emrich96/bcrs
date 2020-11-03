@@ -75,6 +75,9 @@
   align-items: center;
   justify-content: center;
 }
+.create-account-link a {
+  margin-left: .5rem;
+}
 .create-account-link .mat-icon {
   margin-left: .25rem
 }

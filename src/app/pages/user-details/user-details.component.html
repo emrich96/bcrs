@@ -1,8 +1,24 @@
-<!--User details component html page-->
+<mat-dialog-content fxFlex fxLayout="column" [formGroup]="userForm">
+  <h2 mat-dialog-title>Edit {{ userData.firstName }}'s information</h2>
 
+  <mat-form-field>
+      <input type="text" placeholder="First Name" matInput formControlName="firstName" [value]="userData.firstName"/>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" placeholder="Last Name" matInput formControlName="lastName" />
+  </mat-form-field>
+  <mat-form-field>
+    <input type="tel" placeholder="Phone" matInput formControlName="phoneNumber" />
+  </mat-form-field>
+  <mat-form-field>
+    <input type="email" placeholder="Email" matInput formControlName="email" />
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" placeholder="Address" matInput formControlName="address" />
+  </mat-form-field>
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button (click)="cancel()" color="primary">Cancel</button>
+    <button mat-raised-button (click)="updateUser()"  color="accent">Update</button>
+  </div>
+</mat-dialog-content>
 
-<p>user-details works!</p>
-
-
-
-<!--End Page-->

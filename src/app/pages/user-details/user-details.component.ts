@@ -9,7 +9,10 @@
 */
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/shared/user.interface';
 
 @Component({
   selector: 'app-user-details',
@@ -17,10 +20,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
+  userData: User;
+  userForm: FormGroup
 
-  constructor() { }
+  constructor(private fb: FormBuilder,private dialogRef: MatDialogRef<UserDetailsComponent>, @Inject(MAT_DIALOG_DATA) data) {
+    this.userData = data.userData
+  }
 
   ngOnInit(): void {
+    // set the default values to the database
+    this.userForm =  new FormGroup({
+      firstName: new FormControl(this.userData.firstName, Validators.required),
+      lastName: new FormControl(this.userData.lastName, Validators.required),
+      phoneNumber: new FormControl(this.userData.phoneNumber, Validators.required),
+      address: new FormControl(this.userData.address, Validators.required),
+      email: new FormControl(this.userData.email, Validators.required)
+    })
+  }
+
+  updateUser() {
+    // pass the updated values to back to the parent
+    this.dialogRef.close(this.userForm.value);
+  }
+
+  cancel() {
+    this.dialogRef.close();
   }
 
 }

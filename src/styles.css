@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; overflow: auto;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 a { text-decoration: none; }
 
@@ -8,3 +8,16 @@ a { text-decoration: none; }
 .float-right { float: right; }
 .text-right { text-align: right; }
 .text-center { text-align: center; }
+
+/* card styles */
+.card {
+  text-align: center;
+  width: 80%;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px 0px 80px 0px;
+}
+
+.mat-dialog-actions {
+  margin-bottom: 0!important;
+}
