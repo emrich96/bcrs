@@ -27,8 +27,8 @@ export class UserService {
   }
 
 
-// findAllUsersById API
-  findAllUsersById(userId: string): Observable<any> {
+// findUserById API
+  findUserById(userId: string): Observable<any> {
     return this.http.get('/api/users/' + userId);
   }
 
