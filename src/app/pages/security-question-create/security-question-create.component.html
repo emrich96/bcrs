@@ -1,5 +1,14 @@
-<!--Security Questions Create html page-->
-<div>Create new Security Question works!</div>
+<h2 mat-dialog-title>Add new security question</h2>
 
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field style="width: 200px;">
+    <mat-label>Question</mat-label>
+    <input type="text" matInput formControlName="text" />
+  </mat-form-field>
+<br />
+</mat-dialog-content>
 
-<!--End Page-->
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button [disabled]="!form.valid" (click)="create()">Create</button>
+</mat-dialog-actions>

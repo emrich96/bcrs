@@ -4,11 +4,11 @@
 }
 
 .aboutContainer {
-    padding-right: 50%;
+    padding-right: 40%;
 }
 
 .contactContainer {
-    padding-right: 50%;
+    padding-right: 40%;
 }
 
 hr {
@@ -18,4 +18,8 @@ hr {
 .column {
     float: left;
     width: 15%;
+}
+
+#contactStyle {
+    padding-bottom: 10%;
 }

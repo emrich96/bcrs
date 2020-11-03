@@ -16,6 +16,7 @@ import { DeleteRecordDialogComponent } from 'src/app/shared/delete-record-dialog
 import { User } from 'src/app/shared/user.interface';
 import { UserService } from 'src/app/shared/user.service.service';
 import { UserDetailsComponent } from '../user-details/user-details.component';
+import { UserCreateComponent } from '../user-create/user-create.component';
 
 @Component({
   selector: 'app-user-list',
@@ -64,6 +65,23 @@ export class UserListComponent implements OnInit {
       }
     })
   }
+  /*openCreateUserDialog() {
+    const dialogRef = this.dialog.open(UserCreateComponent, {
+      disableClose: true
+    })
+
+    dialogRef.afterClosed().subscribe( () => this.userService.findAllUsers() );
+    dialogRef.afterClosed().subscribe(data => {
+      if (data) {
+        this.userService.findAllUsers().subscribe(res => {
+          this.users = res.data;
+          console.log(this.users);
+        }, err => {
+          console.log(err)
+        })
+      }
+    })
+  }*/
 
   delete(userId, recordId) {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {

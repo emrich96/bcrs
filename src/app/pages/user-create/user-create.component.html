@@ -1,8 +1,41 @@
-<!--User create component html page-->
+<h2 mat-dialog-title>Add new user</h2>
 
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field style="width: 200px;">
+    <mat-label>First Name</mat-label>
+    <input type="text" matInput formControlName="firstName" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input type="text" matInput formControlName="lastName">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <input type="text" matInput formControlName="address">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Phone</mat-label>
+    <input type="text" matInput formControlName="phoneNumber">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="text" matInput formControlName="email">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input type="text" matInput formControlName="userName">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="text" matInput formControlName="password">
+  </mat-form-field>
+  <br />
+</mat-dialog-content>
 
-<p>user-create works!</p>
-
-
-
-<!--End Page-->
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button [disabled]="!form.valid" (click)="createUser()">Create user</button>
+</mat-dialog-actions>

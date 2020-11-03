@@ -1,4 +1,5 @@
 /*Base layout component CSS page*/
+
 .navbar-container {
     width: 100%;
     padding: 5px;
@@ -6,8 +7,9 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .navbar-container .mat-icon-button .mat-icon {
-  line-height: .70;
+    line-height: .70;
 }
 
 .navbar-link {
