@@ -36,7 +36,7 @@ export class UserDetailsComponent implements OnInit {
       address: new FormControl(this.userData.address, Validators.required),
       email: new FormControl(this.userData.email, Validators.required)
     })
-}
+  }
 
   updateUser() {
     // pass the updated values to back to the parent
