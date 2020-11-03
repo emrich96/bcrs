@@ -27,7 +27,7 @@
 
                         <mat-form-field appearance="fill" style="width: 100%">
                             <mat-label for="password" id="lblUserName">Password</mat-label>
-                            <input id="password" name="password" type="text" required matInput [formControl]="form.controls['password']" />
+                            <input id="password" name="password" type="password" required matInput [formControl]="form.controls['password']" />
                             <!-- validation messages -->
                             <mat-error *ngIf="form.controls['userName'].hasError('required') && form.controls['password'].touched">
                                 Password is a required field
