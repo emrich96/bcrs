@@ -71,8 +71,7 @@ import { ChartModule } from 'primeng/chart';
     VerifyUserNameComponent,
     VerifySecurityQuestionsComponent,
     ResetPasswordFormComponent,
-    ErrorComponent,
-    ChartModule
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +93,8 @@ import { ChartModule } from 'primeng/chart';
     MatStepperModule,
     MatSelectModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    ChartModule
   ],
   providers: [
     {
