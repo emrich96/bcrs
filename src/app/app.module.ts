@@ -49,6 +49,7 @@ import { VerifyUserNameComponent } from './pages/verify-user-name/verify-user-na
 import { VerifySecurityQuestionsComponent } from './pages/verify-security-questions/verify-security-questions.component';
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { ErrorComponent } from './pages/error/error.component';
     VerifyUserNameComponent,
     VerifySecurityQuestionsComponent,
     ResetPasswordFormComponent,
-    ErrorComponent
+    ErrorComponent,
+    ChartModule
   ],
   imports: [
     BrowserModule,
