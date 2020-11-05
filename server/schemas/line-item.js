@@ -11,9 +11,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let roleSchema = new Schema({
-  text: { type: String, unique: true },
-  isDisabled: { type: Boolean, default: false }
-});
+let lineItemSchema = new Schema({
+  title: { type: String },
+  price: { type: Number }
+})
 
-module.exports = mongoose.model('Role', roleSchema);
+module.exports = lineItemSchema;
