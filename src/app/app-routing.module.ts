@@ -29,7 +29,7 @@ import { VerifyUserNameComponent } from './pages/verify-user-name/verify-user-na
 import { VerifySecurityQuestionsComponent } from './pages/verify-security-questions/verify-security-questions.component';
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { ErrorComponent } from './pages/error/error.component';
-
+import { RoleGuard } from './shared/guards/role.guard';
 
 const routes: Routes = [
   {
@@ -39,6 +39,11 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'purchases-by-service-graph',
+        component: PurchasesByGraphComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'about',
@@ -68,6 +73,10 @@ const routes: Routes = [
       {
         path: 'security-questions/create/new',
         component: SecurityQuestionCreateComponent
+      },
+      {
+        path: 'roles',
+        component: RoleDetailsComponent,
       },
     ],
     canActivate: [AuthGuard]

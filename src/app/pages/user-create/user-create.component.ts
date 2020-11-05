@@ -12,8 +12,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/shared/user.interface';
-import { UserService } from './../../shared/user.service.service';
+import { User } from 'src/app/shared/interfaces/user.interface';
+import { UserService } from '../../shared/services/user.service.service';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({

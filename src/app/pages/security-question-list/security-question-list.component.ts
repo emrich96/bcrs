@@ -11,9 +11,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { SecurityQuestionServiceService } from './../../shared/security-question.service.service';
+import { SecurityQuestionServiceService } from '../../shared/services/security-question.service.service';
 import { DeleteRecordDialogComponent } from '../../shared/delete-record-dialog/delete-record-dialog.component';
-import { SecurityQuestion } from './../../shared/security-question.interface';
+import { SecurityQuestion } from '../../shared/interfaces/security-question.interface';
 import { SecurityQuestionDetailsComponent } from '../security-question-details/security-question-details.component'
 
 

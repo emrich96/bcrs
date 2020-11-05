@@ -11,9 +11,9 @@
 
 
 import { Component, OnInit } from '@angular/core';
-import { SecurityQuestion } from '../../shared/security-question.interface';
+import { SecurityQuestion } from '../../shared/interfaces/security-question.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SecurityQuestionServiceService } from 'src/app/shared/security-question.service.service';
+import { SecurityQuestionServiceService } from 'src/app/shared/services/security-question.service.service';
 import { Router } from '@angular/router';
 
 

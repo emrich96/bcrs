@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SelectedSecurityQuestion } from '../../shared/selected-security-question'
+import { SelectedSecurityQuestion } from '../../shared/interfaces/selected-security-question'
 
 @Component({
   selector: 'app-verify-security-questions',

@@ -11,8 +11,8 @@
 
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SecurityQuestionServiceService } from './../../shared/security-question.service.service';
-import { SecurityQuestion } from './../../shared/security-question.interface';
+import { SecurityQuestionServiceService } from '../../shared/services/security-question.service.service';
+import { SecurityQuestion } from '../../shared/interfaces/security-question.interface';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

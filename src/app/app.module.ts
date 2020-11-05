@@ -37,6 +37,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -50,6 +51,11 @@ import { VerifySecurityQuestionsComponent } from './pages/verify-security-questi
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { ChartModule } from 'primeng/chart';
+import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/invoice-summary-dialog.component';
+import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
+import { RoleCreateComponent } from './pages/role-create/role-create.component';
+import { RoleDetailsComponent } from './pages/role-details/role-details.component';
+import { RoleListComponent } from './pages/role-list/role-list.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +77,12 @@ import { ChartModule } from 'primeng/chart';
     VerifyUserNameComponent,
     VerifySecurityQuestionsComponent,
     ResetPasswordFormComponent,
-    ErrorComponent
+    ErrorComponent,
+    InvoiceSummaryDialogComponent,
+    PurchasesByServiceGraphComponent,
+    RoleCreateComponent,
+    RoleDetailsComponent,
+    RoleListComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +97,7 @@ import { ChartModule } from 'primeng/chart';
     ReactiveFormsModule,
     MatCardModule,
     MatTableModule,
+    MatCheckboxModule,
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
