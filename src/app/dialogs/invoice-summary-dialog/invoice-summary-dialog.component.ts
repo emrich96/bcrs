@@ -1,3 +1,15 @@
+/*
+============================================
+; Title: BCRS
+; Authors: Mike Goldberg, Emily Richter, Ashleigh Lyman
+; Date: 10/20/2020
+; Modified By: Ashleigh Lyman
+; Description: E2E MEAN Stack Application
+;===========================================
+*/
+
+
+
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Invoice } from '../../shared/interfaces/invoice.interface';
