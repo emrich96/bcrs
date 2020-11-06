@@ -76,16 +76,16 @@ export class HomeComponent implements OnInit {
 
     const partsAmount = parseFloat(form.parts);
     const laborAmount = form.labor = 50;
-    const lineItemTotal = this.lineItems.reduce({prev, cur) => prev + cur.price, 0);
+    const lineItemTotal = this.lineItems.reduce((prev, cur) => prev + cur.price, 0);
     const total = partsAmount + laborAmount + lineItemTotal;
 
     const invoice = {
       userName: this.userName,
       lineItems: this.lineItems,
-      partsAmount: partsAmount,
-      laborAmount: laborAmount,
-      lineItemTotal: lineItemTotal,
-      total: total,
+      partsAmount,
+      laborAmount,
+      lineItemTotal,
+      total,
       orderDate: new Date()
     } as Invoice;
 

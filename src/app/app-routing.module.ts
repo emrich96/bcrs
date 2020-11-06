@@ -11,7 +11,7 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './shared/auth.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 import { HomeComponent } from './pages/home/home.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
@@ -30,6 +30,9 @@ import { VerifySecurityQuestionsComponent } from './pages/verify-security-questi
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { RoleGuard } from './shared/guards/role.guard';
+import { RoleDetailsComponent } from './pages/role-details/role-details.component';
+import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
+
 
 const routes: Routes = [
   {
@@ -42,7 +45,7 @@ const routes: Routes = [
       },
       {
         path: 'purchases-by-service-graph',
-        component: PurchasesByGraphComponent,
+        component: PurchasesByServiceGraphComponent,
         canActivate: [RoleGuard]
       },
       {

@@ -12,7 +12,7 @@ import { LineItem } from './line-item.interface';
 
 export interface Invoice {
   userName: string;
-  lineItem: LineItem[];
+  lineItems: LineItem[];
   partsAmount: number;
   laborAmount: number;
   lineItemTotal: number;

@@ -9,8 +9,7 @@
 */
 
 export interface ServiceRepairItem {
-  id: any;
-  _id: string;
+  id: string;
   title: string;
   price: number;
 }

@@ -26,7 +26,7 @@ export class ServiceRepairService {
         price: 39.99
       },
       {
-        id: "102",
+        id: '102',
         title: "Spyware Removal",
         price: 99.9
       },
