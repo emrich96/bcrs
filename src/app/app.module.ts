@@ -82,7 +82,7 @@ import { RoleListComponent } from './pages/role-list/role-list.component';
     PurchasesByServiceGraphComponent,
     RoleCreateComponent,
     RoleDetailsComponent,
-    RoleListComponent
+    RoleListComponent,
   ],
   imports: [
     BrowserModule,
