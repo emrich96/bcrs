@@ -12,6 +12,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Role } from '../../shared/interfaces/role.interface';
 import { User } from 'src/app/shared/interfaces/user.interface';
 
 @Component({
@@ -22,6 +23,7 @@ import { User } from 'src/app/shared/interfaces/user.interface';
 export class UserDetailsComponent implements OnInit {
   userData: User;
   userForm: FormGroup
+  roles: Role[];
 
   constructor(private fb: FormBuilder,private dialogRef: MatDialogRef<UserDetailsComponent>, @Inject(MAT_DIALOG_DATA) data) {
     this.userData = data.userData
