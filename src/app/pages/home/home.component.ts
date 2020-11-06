@@ -29,14 +29,14 @@ export class HomeComponent implements OnInit {
   form: FormGroup;
   userName: string;
   services: ServiceRepairItem[];
-  lineItem: LineItem[];
+  lineItems: LineItem[];
 
   constructor(private cookieService: CookieService,
     private fb: FormBuilder, private dialog: MatDialog, private router: Router,
     private serviceRepairService: ServiceRepairService, private invoiceService: InvoiceService) {
 
     this.userName = this.cookieService.get('sessionuser');
-    this.services = this.serviceRepairService.getServiceRepairItem();
+    this.services = this.serviceRepairService.getServiceRepairItems();
   }
 
   ngOnInit(): void {
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
 
     const partsAmount = parseFloat(form.parts);
     const laborAmount = form.labor = 50;
-    const lineItemTotal = this.lineItems.reduce({ prev, cur) => prev + cur.price, 0);
+    const lineItemTotal = this.lineItems.reduce({prev, cur) => prev + cur.price, 0);
     const total = partsAmount + laborAmount + lineItemTotal;
 
     const invoice = {

@@ -21,8 +21,8 @@ export class ServiceRepairService {
   constructor() {
     this.serviceRepairItems = [
       {
-        id: "101",
-        title: "Password Reset",
+        id: '101',
+        title: 'Password Reset',
         price: 39.99
       },
       {
@@ -59,6 +59,7 @@ export class ServiceRepairService {
   }
 
   getServiceRepairItems(): ServiceRepairItem[] {
+    return this.serviceRepairItems;
 
   }
 }
