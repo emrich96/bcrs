@@ -33,6 +33,7 @@ import { RoleGuard } from './shared/guards/role.guard';
 import { RoleDetailsComponent } from './pages/role-details/role-details.component';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
 import { RoleListComponent } from './pages/role-list/role-list.component';
+import { RoleCreateComponent } from './pages/role-create/role-create.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,14 @@ const routes: Routes = [
         path: 'roles',
         component: RoleListComponent,
       },
+      {
+        path: 'roles/create/new',
+        component: RoleCreateComponent,
+      },
+      {
+        path: 'roles/:roleId',
+        component: RoleDetailsComponent
+      }
     ],
     canActivate: [AuthGuard]
   },
