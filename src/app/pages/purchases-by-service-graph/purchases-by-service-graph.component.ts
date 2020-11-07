@@ -43,7 +43,7 @@ export class PurchasesByServiceGraphComponent implements OnInit {
         datasets: [
           // graph object
           {
-            backgroundColors: [
+            backgroundColor: [
               '#ed0a3f',
               '#ff8833',
               '#5fa777',
@@ -53,13 +53,13 @@ export class PurchasesByServiceGraphComponent implements OnInit {
               '#6cdae7'
             ],
             hoverBackgroundColor: [
-              '#ed0a3f',
-              '#ff8833',
-              '#5fa777',
-              '#0066cc',
-              '#6b3fa0',
-              '#af593e',
-              '#6cdae7'
+              '#ff596a',
+              '#ffb963',
+              '#8fd9a6',
+              '#5c93ff',
+              '#9c6cd2',
+              '#e58769',
+              '#a2ffff'
             ],
             data: this.itemCount
           },
