@@ -8,6 +8,12 @@ a { text-decoration: none; }
 .float-right { float: right; }
 .text-right { text-align: right; }
 .text-center { text-align: center; }
+.warning {
+  color: #E53935;
+  margin-top: -1rem;
+  font-size: .75rem;
+  padding-bottom: .5rem;
+}
 
 /* card styles */
 .card {
