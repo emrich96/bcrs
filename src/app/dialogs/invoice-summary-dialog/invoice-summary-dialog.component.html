@@ -1,3 +1,9 @@
+<!--
+  Invoice Summary HTML
+  This will display when the submit button is selected at
+  the bottom of the service repair form.
+-->
+
 <h2 style="text-align: center;" mat-dialog-title>
     {{invoice.userName}} please confirm your order</h2>
 
@@ -5,6 +11,9 @@
     <h3>Order date: {{ invoice.orderDate | date }}</h3>
     <mat-divider></mat-divider>
 
+
+    <!--This section will pull data from the lineItems home component ts page.
+      The options the user selects will display-->
     <h4>Services</h4>
     <div *ngFor="let lineItems of invoice.lineItems">
         <mat-list>
@@ -18,6 +27,8 @@
 
     <mat-divider></mat-divider>
 
+    <!--This section will pull data from the partsAmount and laborAmount home component ts page.
+    The options the user enters will display-->
     <h4>Standard Fees</h4>
     <mat-list>
         <mat-list-item>
@@ -47,3 +58,5 @@
     <button mat-raised-button matDialogClose="cancel" color="primary">Cancel</button>
     <button mat-raised-button matDialogClose="confirm" color="primary">Confirm Order</button>
 </div>
+
+<!--End of HTML page-->

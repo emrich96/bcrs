@@ -2,6 +2,7 @@
     <mat-card fxFlex style="width: 65%; margin-left: 18%; margin-top: 5%;" class="mat-elevation-z0">
         <mat-card-title style="text-align: center; font-weight: lighter;">Account Registration</mat-card-title>
 
+        <!--Error message will appear if there is an error-->
         <mat-card *ngIf="errorMessage" class="mat-elevation-z0" style="width: 75%;">
 
             <mat-card-content>
@@ -14,7 +15,9 @@
 
         <form id="regForm" [formGroup]="registrationForm">
             <mat-card-content fxLayout="column" fxLayoutGap="10px">
+                <!--Controls steps in registration process-->
                 <mat-horizontal-stepper #stepper>
+                    <!--Step 1 Contact Information-->
                     <mat-step fxFlex formGroupName="contactInformation" [stepControl]="registrationForm.get('contactInformation')">
                         <ng-template matStepLabel>Contact Information</ng-template>
 
@@ -58,12 +61,9 @@
                         </div>
                     </mat-step>
 
+                    <!--Step 2 Security Questions-->
                     <mat-step formGroupName="securityQuestions" [stepControl]="registrationForm.get('securityQuestions')">
                         <ng-template matStepLabel>Security Questions</ng-template>
-
-
-
-
                         <mat-list>
                             <mat-list-item>
                                 <mat-form-field fxFlex>
@@ -74,8 +74,7 @@
                                     </mat-select>
                                 </mat-form-field>
 
-
-
+                                <!--Question 1-->
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <mat-form-field fxFlex>
                                     <input matInput formControlName="answerToSecurityQuestion1" placeholder="Answer 1" />
@@ -91,7 +90,7 @@
                                     </mat-select>
                                 </mat-form-field>
 
-
+                                <!--Question 2-->
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <mat-form-field fxFlex>
                                     <input matInput formControlName="answerToSecurityQuestion2" placeholder="Answer 2" />
@@ -107,6 +106,7 @@
                                     </mat-select>
                                 </mat-form-field>
 
+                                <!--Question 3-->
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <mat-form-field fxFlex style="padding-left: 15px">
                                     <input matInput formControlName="answerToSecurityQuestion3" placeholder="Answer 3" />
@@ -120,6 +120,7 @@
                         </div>
                     </mat-step>
 
+                    <!--Step 3 Credentials-->
                     <mat-step formGroupName="credentials" [stepControl]="registrationForm.get('credentials')">
                         <ng-template matStepLabel>Credentials</ng-template>
 

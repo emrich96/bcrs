@@ -28,13 +28,16 @@ import { ServiceRepairItem } from 'src/app/shared/interfaces/service-repair-item
 export class HomeComponent implements OnInit {
   form: FormGroup;
   userName: string;
+
+  // Accepts array data and reassigns
   services: ServiceRepairItem[];
   lineItems: LineItem[];
 
-  constructor(private cookieService: CookieService,
-    private fb: FormBuilder, private dialog: MatDialog, private router: Router,
-    private serviceRepairService: ServiceRepairService, private invoiceService: InvoiceService) {
+  constructor(private cookieService: CookieService, private fb: FormBuilder, private dialog: MatDialog,
+              private router: Router, private serviceRepairService: ServiceRepairService,
+              private invoiceService: InvoiceService) {
 
+    // Stores entered userName in the cookie service and service repair form items in new variable
     this.userName = this.cookieService.get('sessionuser');
     this.services = this.serviceRepairService.getServiceRepairItems();
   }
@@ -48,6 +51,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line: typedef
   submit(form) {
     console.log(form);
     const selectedServiceIds = [];
@@ -59,9 +63,9 @@ export class HomeComponent implements OnInit {
       }
     }
     this.lineItems = [];
+
     /*Build  the invoice object
     */
-
     for (const savedService of this.services) {
       for (const selectedService of selectedServiceIds) {
         if (savedService.id === selectedService.id) {
@@ -93,7 +97,7 @@ export class HomeComponent implements OnInit {
 
     const dialogRef = this.dialog.open(InvoiceSummaryDialogComponent, {
       data: {
-        invoice: invoice
+        invoice
       },
       disableClose: true,
       width: '800px'
@@ -107,7 +111,7 @@ export class HomeComponent implements OnInit {
           this.router.navigate(['/']);
         }, err => {
           console.log(err);
-        })
+        });
       }
     });
   }
