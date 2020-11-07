@@ -25,7 +25,7 @@ import { UserDetailsComponent } from '../user-details/user-details.component';
 export class UserListComponent implements OnInit {
 
   users: User[];
-  displayedColumns: string[] = ['userName','firstName','lastName','phoneNumber','address','email','functions'];
+  displayedColumns: string[] = ['userName','firstName','lastName','phoneNumber','address','email', 'role', 'functions'];
 
   constructor(private dialog: MatDialog, private userService: UserService) {
 
@@ -64,29 +64,12 @@ export class UserListComponent implements OnInit {
       }
     })
   }
-  /*openCreateUserDialog() {
-    const dialogRef = this.dialog.open(UserCreateComponent, {
-      disableClose: true
-    })
-
-    dialogRef.afterClosed().subscribe( () => this.userService.findAllUsers() );
-    dialogRef.afterClosed().subscribe(data => {
-      if (data) {
-        this.userService.findAllUsers().subscribe(res => {
-          this.users = res.data;
-          console.log(this.users);
-        }, err => {
-          console.log(err)
-        })
-      }
-    })
-  }*/
 
   delete(userId, recordId) {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
         recordId,
-        dialogHeader: 'Delete Record Dialog',
+        dialogHeader: 'Delete User',
         dialogBody: `Are you sure you want to delete user ${recordId}?`
       },
       disableClose: true,

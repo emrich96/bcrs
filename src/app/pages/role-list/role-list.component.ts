@@ -41,7 +41,7 @@ export class RoleListComponent implements OnInit {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
         roleId,
-        dialogHeader: `Delete Record Dialog`,
+        dialogHeader: `Delete Role`,
         dialogBody: `Are you sure you want to delete role: ${text}?`
       },
       disableClose: true,
