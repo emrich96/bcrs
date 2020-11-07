@@ -32,6 +32,7 @@ import { ErrorComponent } from './pages/error/error.component';
 import { RoleGuard } from './shared/guards/role.guard';
 import { RoleDetailsComponent } from './pages/role-details/role-details.component';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
+import { RoleListComponent } from './pages/role-list/role-list.component';
 
 
 const routes: Routes = [
@@ -79,7 +80,7 @@ const routes: Routes = [
       },
       {
         path: 'roles',
-        component: RoleDetailsComponent,
+        component: RoleListComponent,
       },
     ],
     canActivate: [AuthGuard]
