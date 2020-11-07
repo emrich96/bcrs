@@ -84,7 +84,7 @@ router.get('/purchases-graph', async (req,res) => {
         const findPurchaseErrorResponse = new ErrorResponse(500, 'Internal server error', err);
         res.status(500).send(findPurchaseErrorResponse.toObject());
       } else {
-        console.log(invoice);
+        console.log(purchaseGraph);
         const findPurchaseResponse = new BaseResponse(200, 'Query successful', purchaseGraph);
         res.json(findPurchaseResponse.toObject());
       }

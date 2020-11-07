@@ -201,7 +201,7 @@ router.get('/:userName/security-questions', async (req, res) => {
 });
 
 // FindUserRole
-router.get("/userName/role", async (req, res) => {
+router.get("/:userName/role", async (req, res) => {
   try {
     User.findOne({'userName': req.params.userName}, function(err, user){
       if (err){
