@@ -21,7 +21,7 @@ export class InvoiceService {
   constructor(private http: HttpClient) { }
 
   createInvoice(userName: string, invoice: Invoice): Observable<any> {
-    return this.http.post('/api/invoices/' + userName, {
+    return this.http.post('/api/invoice/' + userName, {
       userName: userName,
       lineItems: invoice.lineItems,
       partsAmount: invoice.partsAmount,
@@ -32,6 +32,6 @@ export class InvoiceService {
   }
   // tslint:disable-next-line: typedef
   findPurchasesByServiceGraph() {
-    return this.http.get('/api/invoices/purchases-graph');
+    return this.http.get('/api/invoice/purchases-graph');
 }
 }

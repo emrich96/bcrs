@@ -77,7 +77,7 @@ export class SecurityQuestionListComponent implements OnInit {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
         recordText,
-        dialogHeader: `Delete Record Dialog`,
+        dialogHeader: `Delete Security Question`,
         dialogBody: `Are you sure you want to delete security question <strong>${recordText}</strong>?`
       },
       disableClose: true,

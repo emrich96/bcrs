@@ -11,7 +11,7 @@
                 <!-- logo -->
                 <button class="navbar-link" routerLink="/" mat-button>BCRS</button>
                 <div>
-                  <button [matMenuTriggerFor]="adminMenu" mat-button class="navbar-link">
+                  <button *ngIf="userIsAdmin" [matMenuTriggerFor]="adminMenu" mat-button class="navbar-link">
                     Admin
                   </button>
                   <mat-menu #adminMenu="matMenu" x-position="before">
@@ -28,6 +28,9 @@
                         </button>
                         <button mat-menu-item class="sub-nav-item" routerLink="/roles">
                           Manage Roles
+                        </button>
+                        <button mat-menu-item class="sub-nav-item" routerLink="/purchases-by-service-graph">
+                          Purchase Graph
                         </button>
                       </div>
                     </div>

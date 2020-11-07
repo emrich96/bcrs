@@ -78,17 +78,18 @@ export class RegisterComponent implements OnInit {
         answerText: securityQuestions.answerToSecurityQuestion3
       },
     ];
-
-    console.log(selectedSecurityQuestions);
+    console.log('contact info: ', contactInformation)
+    console.log('security questions: ', selectedSecurityQuestions);
+    console.log('credentials: ', credentials)
 
     this.http.post('/api/session/register', {
       userName: credentials.userName,
       password: credentials.password,
-      firstName: credentials.firstName,
-      lastName: credentials.lastName,
-      phoneNumber: credentials.phoneNumber,
-      address: credentials.address,
-      email: credentials.email,
+      firstName: contactInformation.firstName,
+      lastName: contactInformation.lastName,
+      phoneNumber: contactInformation.phoneNumber,
+      address: contactInformation.address,
+      email: contactInformation.email,
       selectedSecurityQuestions: selectedSecurityQuestions
     }).subscribe(res => {
       if (res['data']) {

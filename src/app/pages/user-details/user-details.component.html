@@ -16,6 +16,13 @@
   <mat-form-field>
     <input type="text" placeholder="Address" matInput formControlName="address" />
   </mat-form-field>
+  <mat-form-field>
+    <mat-select formControlName="role" placeholder="Role">
+      <mat-option *ngFor="let role of roles" [value]="role.text">
+        {{ role.text }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
   <div mat-dialog-actions align="end">
     <button mat-raised-button (click)="cancel()" color="primary">Cancel</button>
     <button mat-raised-button (click)="updateUser()"  color="accent">Update</button>
