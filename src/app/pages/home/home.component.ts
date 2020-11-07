@@ -99,11 +99,12 @@ export class HomeComponent implements OnInit {
       width: '800px'
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === 'confirm') {
+    dialogRef.afterClosed().subscribe(invoiceData => {
+      if (invoiceData === 'confirm') {
         console.log('Invoice saved');
 
-        this.invoiceService.createInvoice(invoice.userName, invoice).subscribe(res => {
+        this.invoiceService.createInvoice(invoiceData.userName, invoiceData).subscribe(res => {
+          // Todo: add success message
           this.router.navigate(['/']);
         }, err => {
           console.log(err);

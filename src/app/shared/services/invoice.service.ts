@@ -21,7 +21,7 @@ export class InvoiceService {
   constructor(private http: HttpClient) { }
 
   createInvoice(userName: string, invoice: Invoice): Observable<any> {
-    return this.http.post('/api/invoices/' + userName, {
+    return this.http.post('/api/invoice/' + userName, {
       userName: userName,
       lineItems: invoice.lineItems,
       partsAmount: invoice.partsAmount,
