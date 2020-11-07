@@ -32,6 +32,6 @@ export class InvoiceService {
   }
   // tslint:disable-next-line: typedef
   findPurchasesByServiceGraph() {
-    return this.http.get('/api/invoices/purchases-graph');
+    return this.http.get('/api/invoice/purchases-graph');
 }
 }
