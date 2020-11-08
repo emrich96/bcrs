@@ -48,8 +48,7 @@ const routes: Routes = [
       {
         path: 'purchases-by-service-graph',
         component: PurchasesByServiceGraphComponent,
-        // TODO: fix guard and add to admin pages
-        // canActivate: [RoleGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'about',
@@ -57,7 +56,8 @@ const routes: Routes = [
       },
       {
         path: 'users',
-        component: UserListComponent
+        component: UserListComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'users/:userId',
@@ -69,7 +69,8 @@ const routes: Routes = [
       },
       {
         path: 'security-questions',
-        component: SecurityQuestionListComponent
+        component: SecurityQuestionListComponent,
+        canActivate: [RoleGuard]
       },
       {
         // path: 'security-questions/:userName',
@@ -83,6 +84,7 @@ const routes: Routes = [
       {
         path: 'roles',
         component: RoleListComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'roles/create/new',
