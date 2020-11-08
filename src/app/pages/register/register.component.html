@@ -1,10 +1,11 @@
-<div fxLayout="column" style="margin-top: 8%;">
-    <mat-card fxFlex style="width: 65%; margin-left: 18%; margin-top: 5%;" class="mat-elevation-z0">
-        <mat-card-title style="text-align: center; font-weight: lighter;">Account Registration</mat-card-title>
+<div fxLayout="column">
+    <mat-card fxFlex class="mat-elevation-z8 register-container">
+        <mat-card-title>
+          Account Registration
+      </mat-card-title>
 
         <!--Error message will appear if there is an error-->
         <mat-card *ngIf="errorMessage" class="mat-elevation-z0" style="width: 75%;">
-
             <mat-card-content>
                 <div class="msg-error" style="font-weight: lighter;">
                     {{errorMessage}}
@@ -115,7 +116,7 @@
                         </mat-list>
 
                         <div fxLayoutAlign="end">
-                            <button mat-raised-button color="primary" matStepperPrevious>Back</button> &nbsp;
+                            <button class="btn-flat" mat-link matStepperPrevious>Back</button>
                             <button mat-raised-button color="primary" matStepperNext>Next</button>
                         </div>
                     </mat-step>
@@ -140,13 +141,13 @@
                         </mat-list>
 
                         <div fxLayoutAlign="end">
-                            <button mat-raised-button color="primary" matStepperPrevious>Back</button> &nbsp;
+                            <button class="btn-flat" matStepperPrevious>Back</button>
                             <button mat-raised-button (click)="register(registrationForm.value)" color="primary" [disabled]="!registrationForm.valid" type="submit">Submit</button>
                         </div>
                     </mat-step>
                 </mat-horizontal-stepper>
-                <a routerLink="/" class="return">Return</a>
             </mat-card-content>
         </form>
+        <a routerLink="/" class="return">Return</a>
     </mat-card>
 </div>

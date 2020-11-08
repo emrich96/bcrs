@@ -1,8 +1,4 @@
 /*Sign in Component CSS page*/
-.signin-body {
-  background-color: rgba(0,0,0,.2);
-  height: 100%;
-}
 .signin-container {
   width: 55%;
   margin: 15% auto;
@@ -11,7 +7,7 @@
 
 .signin-container .mat-card-title {
   padding: 1.5rem 2rem;
-  background-color: rgba(0,0,0,.6);
+  background-color: #78b1b6;
   color: #fff;
   margin-left: -1rem;
   margin-right: -1rem;

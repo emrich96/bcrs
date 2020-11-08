@@ -1,1 +1,6 @@
 /*Auth-layout component CSS page*/
+.auth-body {
+  background-color: #dcffff;
+  height: 100%;
+  margin-top: 0;
+}
