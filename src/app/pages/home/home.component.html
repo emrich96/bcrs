@@ -5,7 +5,7 @@
     </h1>
 </div>
 
-<mat-card class="mat-elevation-z0 success-card" style="width: 65%; margin: 0 auto;" *ngIf="showSuccessMsg; else notShowSuccess">
+<mat-card class="mat-elevation-z0 success-card" style="width: 65%; margin: 0 auto;max-width: 800px;" *ngIf="showSuccessMsg; else notShowSuccess">
   <mat-card-title>
     Success!
   </mat-card-title>
@@ -19,7 +19,7 @@
 </mat-card>
 
 <ng-template #notShowSuccess>
-  <mat-card class="mat-elevation-z0" style="width: 65%; margin: 0 auto;">
+  <mat-card class="mat-elevation-z0" style="width: 65%; margin: 0 auto;max-width: 800px;">
       <form #serviceRepairForm="ngForm" (ngSubmit)="submit(serviceRepairForm.value); serviceRepairForm.reset();">
           <mat-card-content>
 
@@ -62,7 +62,7 @@
           <br/><br/>
 
           <mat-card-actions align="end">
-              <button mat-raised-button type="reset">Clear</button>
+              <button mat-button type="reset">Clear</button>
               <button mat-raised-button color="primary">Submit</button>
           </mat-card-actions>
       </form>

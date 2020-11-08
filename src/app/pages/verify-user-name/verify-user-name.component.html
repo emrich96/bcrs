@@ -1,16 +1,12 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <div style="width: 90%;">
-      <p style="text-align: center; padding-left: 10%; font-weight: lighter;">
-        BCRS
-      </p>
-    </div>
+<mat-toolbar>
+  <mat-toolbar-row style="justify-content: center;">
+    <img src="../../../assets/img/bcrs_logo.svg" width="125" height="auto" />
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div fxLayout="row wrap" fxLayoutAlign="center start" style="margin-top: 65px;">
   <div fxFlex.gt-sm="55" fxFlex="100">
-    <mat-card style="width: 80%;" class="mat-card-top pa-0">
+    <mat-card style="width: 80%;" class="mat-card-top pa-0 mat-elevation-z8 verify-container">
       <mat-card-title style="text-align: center; font-size: 36px; font-weight: lighter;" class="mat-headline">
         Verify Username
       </mat-card-title>
@@ -24,11 +20,11 @@
           <br/><br/>
 
           <div fxFlex fxLayoutAlign="end">
-            <button mat-raised-button color="accent">Next</button>
+            <button mat-raised-button color="primary">Next</button>
           </div>
         </mat-card-content>
       </form>
+      <a class="return" routerLink="/session/signin">Return</a>
     </mat-card>
-    <a routerLink="/session/signin">Return</a>
   </div>
 </div>

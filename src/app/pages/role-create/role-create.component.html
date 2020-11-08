@@ -1,21 +1,21 @@
-<div fxLayout="column">
-  <mat-card class="mat-elevation-z8">
-    <mat-card-title>Create Role</mat-card-title>
-    <br />
-    <form [formGroup]="form" (ngSubmit)="create()" #roleForm>
-      <mat-card-content>
-        <div fxLayout="column" fxLayoutGap="10px">
-          <mat-form-field>
-            <input matInput [formControl]="form.controls['text']" placeholder="Role" />
-          </mat-form-field>
-        </div>
-      </mat-card-content>
-      <br />
+<div fxLayout="column" class="card">
+  <mat-card [formGroup]="form">
+
+    <mat-card-content fxFlex fxLayout="column" [formGroup]="form">
+      <mat-card-title style="padding-top: 30px;">
+        Add New Role
+      </mat-card-title>
+
+      <mat-form-field>
+        <mat-label>Role Name</mat-label>
+        <input type="text" matInput formControlName="text" />
+      </mat-form-field>
 
       <mat-card-actions align="end">
-        <button mat-raised-button (click)="cancel" color="warn">Cancel</button>
-        <button mat-raised-button color="accent">Submit</button>
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="create()">Create</button>
       </mat-card-actions>
-    </form>
+
+    </mat-card-content>
   </mat-card>
 </div>

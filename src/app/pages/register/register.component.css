@@ -18,7 +18,11 @@
 }
 
 .return {
+  color: rgba(0,0,0,.75);
   position: absolute;
   bottom: -1.75rem;
   left: 1rem;
+}
+.return:hover {
+  color: rgba(0,0,0,.56);
 }
