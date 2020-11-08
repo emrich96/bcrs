@@ -10,7 +10,7 @@
 }
 
 .signin-container .mat-card-title {
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   background-color: rgba(0,0,0,.6);
   color: #fff;
   margin-left: -1rem;
@@ -22,6 +22,10 @@
   text-align: center;
 }
 
+.mat-card-title .sub {
+  margin-top: .75rem;
+  font-size: 1.75rem;
+}
 .signin-container mat-card-subtitle:not(:first-child) {
   text-align: center;
   margin-bottom: .5rem;
