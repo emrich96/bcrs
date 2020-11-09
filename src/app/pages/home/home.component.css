@@ -3,21 +3,25 @@
 }
 
 h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .title {
-  text-align: center;
-  font-weight: lighter;
+    text-align: center;
+    font-weight: lighter;
 }
 
 .subtitle {
-  text-align: center;
-  font-size: 14px;
+    text-align: center;
+    font-size: 14px;
 }
 
 .success-card {
-  background-color: #c8e6c9;
-  border: 1px solid #97b498;
+    background-color: #c8e6c9;
+    border: 1px solid #97b498;
+}
+
+.mat-card-actions {
+    padding-bottom: 10%;
 }
