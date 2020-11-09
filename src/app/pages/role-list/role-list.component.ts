@@ -39,10 +39,10 @@ export class RoleListComponent implements OnInit {
   }
 
   // edit role modal
-  edit(id, question) {
+  edit(id, role) {
     const dialogRef = this.dialog.open(RoleDetailsComponent, {
       data: {
-        questionData: question
+        roleData: role
       },
       disableClose: true,
       width: '800px'
@@ -52,7 +52,7 @@ export class RoleListComponent implements OnInit {
       if (data) {
         console.log(data)
         this.roleService.updateRole(id, data).subscribe(() => {
-          console.log('question Updated');
+          console.log('role');
           this.roleService.findAllRoles().subscribe(res => {
             this.roles = res.data;
             console.log(this.roles);
