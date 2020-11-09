@@ -48,8 +48,7 @@ const routes: Routes = [
       {
         path: 'purchases-by-service-graph',
         component: PurchasesByServiceGraphComponent,
-        // TODO: fix guard and add to admin pages
-        // canActivate: [RoleGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'about',
@@ -83,14 +82,17 @@ const routes: Routes = [
       {
         path: 'roles',
         component: RoleListComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'roles/create/new',
         component: RoleCreateComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'roles/:roleId',
-        component: RoleDetailsComponent
+        component: RoleDetailsComponent,
+        canActivate: [RoleGuard]
       }
     ],
     canActivate: [AuthGuard]
