@@ -19,7 +19,7 @@ export class RoleGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot) {
     return this.roleService.findUserRole(this.cookieService.get('sessionUser')).pipe(map(res => {
-      if (res['data'].role === 'Admin') {
+      if (res['data'].text === 'Admin') {
         return true;
       }
       else {

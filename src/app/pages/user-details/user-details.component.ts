@@ -44,7 +44,7 @@ export class UserDetailsComponent implements OnInit {
       phoneNumber: new FormControl(this.userData.phoneNumber, Validators.required),
       address: new FormControl(this.userData.address, Validators.required),
       email: new FormControl(this.userData.email, Validators.required),
-      role: new FormControl(this.userData.role, Validators.required )
+      role: new FormControl(this.userData['role'].text, Validators.required )
     })
   }
 

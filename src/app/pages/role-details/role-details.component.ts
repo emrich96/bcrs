@@ -8,12 +8,10 @@
 ;===========================================
 */
 
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { RoleService } from '../../shared/services/role.service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Role } from '../../shared/interfaces/role.interface';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-role-details',
@@ -21,40 +19,28 @@ import { Role } from '../../shared/interfaces/role.interface';
   styleUrls: ['./role-details.component.css']
 })
 export class RoleDetailsComponent implements OnInit {
+
+  roleData: Role;
   form: FormGroup;
-  role: Role;
-  roleId: string;
 
-  constructor(private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private roleService: RoleService) {
-    this.roleId = this.route.snapshot.paramMap.get('roleId');
-
-    this.roleService.findRoleById(this.roleId).subscribe(res => {
-      this.role = res['data'];
-    }, err => {
-        console.log(err);
-    }, () => {
-        this.form.controls['text'].setValue(this.role.text);
-    })
+  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<RoleDetailsComponent>, @Inject(MAT_DIALOG_DATA) data) {
+    this.roleData = data.roleData
    }
 
   ngOnInit(): void {
+    console.log(this.roleData.text);
     this.form = this.fb.group({
-      text: [null, Validators.compose([Validators.required])]
+      text: new FormControl(this.roleData.text, Validators.required)
     });
   }
-  save() {
-    const updatedRole = {
-      text: this.form.controls['text'].value
-    } as Role;
 
-    this.roleService.updateRole(this.roleId, updatedRole).subscribe(res => {
-      this.router.navigate(['/roles']);
-    }, err => {
-      console.log(err);
-    });
+  updateRole() {
+    // pass the updated values to back to the parent
+    this.dialogRef.close(this.form.value);
   }
+
   cancel() {
-    this.router.navigate(['/roles']);
+    this.dialogRef.close();
   }
 
 }

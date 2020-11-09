@@ -10,10 +10,10 @@
 
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { HttpClient } from '@angular/common/http';
 import { DeleteRecordDialogComponent } from './../../shared/delete-record-dialog/delete-record-dialog.component';
 import { Role } from '../../shared/interfaces/role.interface';
 import { RoleService } from '../../shared/services/role.service';
+import { RoleDetailsComponent } from '../role-details/role-details.component'
 
 @Component({
   selector: 'app-role-list',
@@ -21,12 +21,14 @@ import { RoleService } from '../../shared/services/role.service';
   styleUrls: ['./role-list.component.css']
 })
 export class RoleListComponent implements OnInit {
+
   roles: Role[];
   displayedColumns = ['role', 'functions'];
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private roleService: RoleService) {
+  constructor(private dialog: MatDialog, private roleService: RoleService) {
     this.roleService.findAllRoles().subscribe(res => {
       this.roles = res.data;
+      console.log(this.roles);
     }, err => {
       console.log(err);
     });
@@ -34,6 +36,32 @@ export class RoleListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  // edit role modal
+  edit(id, question) {
+    const dialogRef = this.dialog.open(RoleDetailsComponent, {
+      data: {
+        questionData: question
+      },
+      disableClose: true,
+      width: '800px'
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      if (data) {
+        console.log(data)
+        this.roleService.updateRole(id, data).subscribe(() => {
+          console.log('question Updated');
+          this.roleService.findAllRoles().subscribe(res => {
+            this.roles = res.data;
+            console.log(this.roles);
+          }, err => {
+            console.log(err);
+          });
+        })
+      }
+    })
   }
 
   // tslint:disable-next-line: typedef

@@ -7,7 +7,7 @@
 ; Description: E2E MEAN Stack Application
 ;===========================================
 */
-
+import { Role } from './role.interface'
 
 
 // User Interface
@@ -20,5 +20,5 @@ export interface User {
   phoneNumber: string;
   address: string;
   email: string;
-  role: string;
+  role: Role;
 }

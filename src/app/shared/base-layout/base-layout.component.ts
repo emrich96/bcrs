@@ -33,8 +33,8 @@ export class BaseLayoutComponent implements OnInit {
 
     this.userName = this.cookieService.get('sessionUser');
     this.roleService.findUserRole(this.userName).subscribe(res => {
-      console.log('success', res['data'].role)
-      this.userIsAdmin = res['data'].role === "Admin"
+      console.log('success', res['data'].text)
+      this.userIsAdmin = res['data'].text === "Admin"
         ? true
         : false;
     }, err => {
