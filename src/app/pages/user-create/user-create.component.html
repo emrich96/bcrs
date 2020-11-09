@@ -39,7 +39,7 @@
       </mat-form-field>
       <mat-card-actions align="end">
         <button mat-button (click)="cancel()">Cancel</button>
-        <button mat-button [disabled]="!form.valid" (click)="createUser()">Create user</button>
+        <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="createUser()">Create user</button>
       </mat-card-actions>
     </mat-card-content>
 

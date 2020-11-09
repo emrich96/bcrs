@@ -56,7 +56,8 @@ const routes: Routes = [
       },
       {
         path: 'users',
-        component: UserListComponent
+        component: UserListComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'users/:userId',
@@ -68,7 +69,8 @@ const routes: Routes = [
       },
       {
         path: 'security-questions',
-        component: SecurityQuestionListComponent
+        component: SecurityQuestionListComponent,
+        canActivate: [RoleGuard]
       },
       {
         // path: 'security-questions/:userName',

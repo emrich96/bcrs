@@ -9,7 +9,9 @@
             <!-- navbar container -->
             <div class="navbar-container">
                 <!-- logo -->
-                <button class="navbar-link" routerLink="/" mat-button>BCRS</button>
+                <a class="navbar-link" routerLink="/" mat-button>
+                  <img src="../../../assets/img/bcrs_logo.svg" width="110" height="auto"/>
+                </a>
                 <div>
                   <button *ngIf="userIsAdmin" [matMenuTriggerFor]="adminMenu" mat-button class="navbar-link">
                     Admin
@@ -19,9 +21,6 @@
                       <div>
                         <button mat-menu-item class="sub-nav-item" routerLink="/users">
                           Manage Users
-                        </button>
-                        <button mat-menu-item class="sub-nav-item" routerLink="/">
-                          Manage Services
                         </button>
                         <button mat-menu-item class="sub-nav-item" routerLink="/security-questions">
                           Manage Security Questions
