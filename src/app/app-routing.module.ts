@@ -89,10 +89,12 @@ const routes: Routes = [
       {
         path: 'roles/create/new',
         component: RoleCreateComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'roles/:roleId',
-        component: RoleDetailsComponent
+        component: RoleDetailsComponent,
+        canActivate: [RoleGuard]
       }
     ],
     canActivate: [AuthGuard]
