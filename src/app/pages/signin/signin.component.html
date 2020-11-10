@@ -29,7 +29,7 @@
                         </mat-form-field>
 
                         <mat-form-field appearance="fill" style="width: 100%">
-                            <mat-label for="password" id="lblUserName">Password</mat-label>
+                            <mat-label>Password</mat-label>
                             <input id="password" name="password" type="password" required matInput [formControl]="form.controls['password']" />
                             <!-- validation messages -->
                             <mat-error *ngIf="form.controls['password'].hasError('pattern') && form.controls['password'].touched">
