@@ -22,7 +22,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class SigninComponent implements OnInit {
   form: FormGroup;
-  errorMessage: string;
+  errorMessage: string = "";
 
   constructor(private router: Router,  private cookieService: CookieService, private fb: FormBuilder, private http: HttpClient) { }
 
@@ -30,7 +30,7 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       userName: [null, Validators.compose([Validators.required])],
-      password: [null, Validators.compose([Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})')])],
+      password: [null, Validators.compose([Validators.required])],
     });
   }
 
@@ -53,7 +53,7 @@ export class SigninComponent implements OnInit {
       }
     }, err => {
       console.log(err);
-      this.errorMessage = err.error.message;
+      this.errorMessage = err.message;
     });
   }
 

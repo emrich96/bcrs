@@ -1,5 +1,5 @@
 /*Sign in Component CSS page*/
-.signin-container {
+.signin-container{
   width: 55%;
   margin: 15% auto;
   max-width: 565px;
@@ -56,14 +56,6 @@
 
 .msg-container {
   padding: 0 16px;
-}
-
-.msg-error {
-  margin: 0px;
-  padding: 12px;
-  color: #D8000C;
-  background-color: #FFD2D2;
-  text-align: center;
 }
 
 .form-container .text-right {

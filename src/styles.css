@@ -20,6 +20,15 @@ a { text-decoration: none; }
   padding-bottom: .5rem;
 }
 
+/* error message */
+.msg-error {
+  margin: 0px;
+  padding: 12px;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  text-align: center;
+}
+
 /* navbar/footer */
 .mat-toolbar {
   background: #afcdce;
