@@ -19,10 +19,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
-import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
-import { UserDetailsComponent } from './pages/user-details/user-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { VerifyUserNameComponent } from './pages/verify-user-name/verify-user-name.component';
@@ -30,7 +28,6 @@ import { VerifySecurityQuestionsComponent } from './pages/verify-security-questi
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { RoleGuard } from './shared/guards/role.guard';
-import { RoleDetailsComponent } from './pages/role-details/role-details.component';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
 import { RoleListComponent } from './pages/role-list/role-list.component';
 import { RoleCreateComponent } from './pages/role-create/role-create.component';
@@ -60,10 +57,6 @@ const routes: Routes = [
         canActivate: [RoleGuard]
       },
       {
-        path: 'users/:userId',
-        component: UserDetailsComponent
-      },
-      {
         path: 'users/create/new',
         component: UserCreateComponent
       },
@@ -71,11 +64,6 @@ const routes: Routes = [
         path: 'security-questions',
         component: SecurityQuestionListComponent,
         canActivate: [RoleGuard]
-      },
-      {
-        // path: 'security-questions/:userName',
-        path: 'security-questions/:questionId',
-        component: SecurityQuestionDetailsComponent
       },
       {
         path: 'security-questions/create/new',
@@ -91,11 +79,6 @@ const routes: Routes = [
         component: RoleCreateComponent,
         canActivate: [RoleGuard]
       },
-      {
-        path: 'roles/:roleId',
-        component: RoleDetailsComponent,
-        canActivate: [RoleGuard]
-      }
     ],
     canActivate: [AuthGuard]
   },
