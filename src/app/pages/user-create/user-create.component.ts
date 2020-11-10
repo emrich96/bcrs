@@ -9,12 +9,11 @@
 */
 
 
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/interfaces/user.interface';
-import { UserService } from '../../shared/services/user.service.service';
-import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-create',
@@ -25,8 +24,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 export class UserCreateComponent implements OnInit {
   form: FormGroup;
+  errorMessage: string;
 
-  constructor(private fb: FormBuilder, private router: Router, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient) { }
 
 
   // This will validate input form data in each field
@@ -34,7 +34,11 @@ export class UserCreateComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       userName: [null, Validators.compose([Validators.required])],
-      password: [null, Validators.compose([Validators.required])],
+      password: [null,[
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')
+      ]],
       firstName: [null, Validators.compose([Validators.required])],
       lastName: [null, Validators.compose([Validators.required])],
       phoneNumber: [null, Validators.compose([Validators.required])],
@@ -48,16 +52,24 @@ export class UserCreateComponent implements OnInit {
   createUser() {
     const newUser = {} as User;
     newUser.userName = this.form.controls.userName.value,
-      newUser.password = this.form.controls.password.value,
-      newUser.firstName = this.form.controls.firstName.value,
-      newUser.lastName = this.form.controls.lastName.value,
-      newUser.phoneNumber = this.form.controls.phoneNumber.value,
-      newUser.address = this.form.controls.address.value,
-      newUser.email = this.form.controls.email.value,
-      this.userService.createUser(newUser).subscribe(res => {
-        this.router.navigate(['/users']);
-      });
+    newUser.password = this.form.controls.password.value,
+    newUser.firstName = this.form.controls.firstName.value,
+    newUser.lastName = this.form.controls.lastName.value,
+    newUser.phoneNumber = this.form.controls.phoneNumber.value,
+    newUser.address = this.form.controls.address.value,
+    newUser.email = this.form.controls.email.value,
 
+    this.http.post('/api/session/register', newUser).subscribe(res => {
+      debugger;
+      if (res['data']) {
+        this.router.navigate(['/users']);
+      } else {
+        this.errorMessage = res['message'];
+      }
+    }, err => {
+      console.log(err);
+      this.errorMessage = err;
+    })
   }
 
   // Cancel navigation link
