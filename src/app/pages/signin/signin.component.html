@@ -3,8 +3,8 @@
 
     <mat-card fxFlex class="mat-elevation-z8 signin-container">
         <mat-card-title>
-          <img src="../../../assets/img/bcrs_logo_lt_alt.svg" width="225" height="auto"/>
-          <div class="sub">Employee Portal</div>
+            <img src="../../../assets/img/bcrs_logo_lt_alt.svg" width="225" height="auto" />
+            <div class="sub">Employee Portal</div>
         </mat-card-title>
 
         <mat-card-content>
@@ -32,7 +32,7 @@
                             <mat-label for="password" id="lblUserName">Password</mat-label>
                             <input id="password" name="password" type="password" required matInput [formControl]="form.controls['password']" />
                             <!-- validation messages -->
-                            <mat-error *ngIf="form.controls['userName'].hasError('required') && form.controls['password'].touched">
+                            <mat-error *ngIf="form.controls['password'].hasError('pattern') && form.controls['password'].touched">
                                 Password is a required field
                             </mat-error>
                         </mat-form-field>
