@@ -9,9 +9,11 @@
             <!-- navbar container -->
             <div class="navbar-container">
                 <!-- logo -->
-                <button class="navbar-link" routerLink="/" mat-button>BCRS</button>
+                <a class="navbar-link" routerLink="/" mat-button>
+                  <img src="../../../assets/img/bcrs_logo.svg" width="110" height="auto"/>
+                </a>
                 <div>
-                  <button [matMenuTriggerFor]="adminMenu" mat-button class="navbar-link">
+                  <button *ngIf="userIsAdmin" [matMenuTriggerFor]="adminMenu" mat-button class="navbar-link">
                     Admin
                   </button>
                   <mat-menu #adminMenu="matMenu" x-position="before">
@@ -20,11 +22,14 @@
                         <button mat-menu-item class="sub-nav-item" routerLink="/users">
                           Manage Users
                         </button>
-                        <button mat-menu-item class="sub-nav-item" routerLink="/">
-                          Manage Services
-                        </button>
                         <button mat-menu-item class="sub-nav-item" routerLink="/security-questions">
                           Manage Security Questions
+                        </button>
+                        <button mat-menu-item class="sub-nav-item" routerLink="/roles">
+                          Manage Roles
+                        </button>
+                        <button mat-menu-item class="sub-nav-item" routerLink="/purchases-by-service-graph">
+                          Purchase Graph
                         </button>
                       </div>
                     </div>

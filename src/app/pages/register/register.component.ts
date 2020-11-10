@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { SecurityQuestion } from 'src/app/shared/security-question.interface';
+import { SecurityQuestion } from 'src/app/shared/interfaces/security-question.interface';
 
 
 @Component({
@@ -54,8 +54,12 @@ export class RegisterComponent implements OnInit {
       }),
       credentials: new FormGroup({
         userName: new FormControl(null, Validators.required),
-        password: new FormControl(null, Validators.required)
-      })
+        password: new FormControl(null, [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')
+        ])
+      }),
     });
   }
 
@@ -78,17 +82,18 @@ export class RegisterComponent implements OnInit {
         answerText: securityQuestions.answerToSecurityQuestion3
       },
     ];
-
-    console.log(selectedSecurityQuestions);
+    console.log('contact info: ', contactInformation)
+    console.log('security questions: ', selectedSecurityQuestions);
+    console.log('credentials: ', credentials)
 
     this.http.post('/api/session/register', {
       userName: credentials.userName,
       password: credentials.password,
-      firstName: credentials.firstName,
-      lastName: credentials.lastName,
-      phoneNumber: credentials.phoneNumber,
-      address: credentials.address,
-      email: credentials.email,
+      firstName: contactInformation.firstName,
+      lastName: contactInformation.lastName,
+      phoneNumber: contactInformation.phoneNumber,
+      address: contactInformation.address,
+      email: contactInformation.email,
       selectedSecurityQuestions: selectedSecurityQuestions
     }).subscribe(res => {
       if (res['data']) {

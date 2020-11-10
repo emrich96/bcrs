@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let userRoleSchema = new Schema({
-    role: { type: String, default: 'Standard' }
+    text: { type: String, default: 'Standard' }
 })
 
 module.exports = userRoleSchema;

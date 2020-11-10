@@ -1,0 +1,13 @@
+<mat-dialog-content fxFlex fxLayout="column" [formGroup]="form">
+  <h2 mat-dialog-title>Edit Roles</h2>
+
+  <mat-form-field>
+      <input type="text" placeholder="Role Name" matInput formControlName="text" [value]="roleData.text"/>
+  </mat-form-field>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-raised-button (click)="updateRole()"  color="primary">Update</button>
+  </div>
+</mat-dialog-content>
+

@@ -8,6 +8,11 @@
 ;===========================================
 */
 
+/*Model for security questions component.
+It is connected to securityQuestions database in MongoDB.
+Accepted data is in parameters.
+*/
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

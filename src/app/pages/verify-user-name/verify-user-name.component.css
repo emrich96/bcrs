@@ -1,0 +1,28 @@
+.verify-container {
+  width: 65%;
+  margin: 15% auto;
+  max-width: 650px;
+}
+
+.verify-container .mat-card-title {
+  padding: 1.5rem 2rem;
+  background-color: #78b1b6;
+  color: #fff;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: -1rem!important;
+  font-weight: 300;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.return {
+  color: rgba(0,0,0,.75);
+  position: absolute;
+  bottom: -1.75rem;
+  left: 1rem;
+}
+.return:hover {
+  color: rgba(0,0,0,.56);
+}

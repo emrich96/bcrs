@@ -12,8 +12,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/shared/user.interface';
-import { UserService } from './../../shared/user.service.service';
+import { User } from 'src/app/shared/interfaces/user.interface';
+import { UserService } from '../../shared/services/user.service.service';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -39,7 +39,7 @@ export class UserCreateComponent implements OnInit {
       lastName: [null, Validators.compose([Validators.required])],
       phoneNumber: [null, Validators.compose([Validators.required])],
       address: [null, Validators.compose([Validators.required])],
-      email: [null, Validators.compose([Validators.required, Validators.email])]
+      email: [null, Validators.compose([Validators.required, Validators.email])],
     });
   }
 

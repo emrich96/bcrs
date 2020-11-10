@@ -11,8 +11,7 @@
 
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SecurityQuestionServiceService } from './../../shared/security-question.service.service';
-import { SecurityQuestion } from './../../shared/security-question.interface';
+import { SecurityQuestion } from '../../shared/interfaces/security-question.interface';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -40,7 +39,7 @@ export class SecurityQuestionDetailsComponent implements OnInit {
     })
   }
 
-  updateUser() {
+  updateQuestion() {
     // pass the updated values to back to the parent
     this.dialogRef.close(this.questionForm.value);
   }

@@ -11,6 +11,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { RoleService } from '../services/role.service';
+import { Role } from '../../shared/interfaces/role.interface';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-base-layout',
@@ -18,10 +21,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./base-layout.component.css']
 })
 export class BaseLayoutComponent implements OnInit {
-
+  userName: string;
+  userIsAdmin: Boolean;
   year: number = Date.now();
 
-  constructor(private cookieService: CookieService, private router: Router) { }
+  constructor(
+    private cookieService: CookieService,
+    private router: Router,
+    private roleService: RoleService
+  ) {
+
+    this.userName = this.cookieService.get('sessionUser');
+    this.roleService.findUserRole(this.userName).subscribe(res => {
+      console.log('success', res['data'].text)
+      this.userIsAdmin = res['data'].text === "Admin"
+        ? true
+        : false;
+    }, err => {
+      console.log('error getting role: ', err);
+    })
+  }
 
   ngOnInit(): void {
   }

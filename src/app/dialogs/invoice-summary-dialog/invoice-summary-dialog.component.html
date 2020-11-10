@@ -1,0 +1,62 @@
+<!--
+  Invoice Summary HTML
+  This will display when the submit button is selected at
+  the bottom of the service repair form.
+-->
+
+<h2 style="text-align: center;" mat-dialog-title>
+    {{invoice.userName}}, Please Confirm Your Order</h2>
+
+<div mat-dialog-content>
+    <h3>Order date: {{ invoice.orderDate | date }}</h3>
+    <mat-divider></mat-divider>
+
+
+    <!--This section will pull data from the lineItems home component ts page.
+      The options the user selects will display-->
+    <h4>Services</h4>
+    <div *ngFor="let lineItems of invoice.lineItems">
+        <mat-list>
+            <mat-list-item>
+                {{lineItems.title}};
+                <div fxFlex></div>
+                {{lineItems.price | currency}}
+            </mat-list-item>
+        </mat-list>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!--This section will pull data from the partsAmount and laborAmount home component ts page.
+    The options the user enters will display-->
+    <h4>Standard Fees</h4>
+    <mat-list>
+        <mat-list-item>
+            Parts:
+            <div fxFlex></div>
+            {{invoice.partsAmount | currency}}
+        </mat-list-item>
+        <mat-list-item>
+            Labor:
+            <div fxFlex></div>
+            {{invoice.laborAmount | currency}}
+        </mat-list-item>
+    </mat-list>
+
+    <br />
+
+    <mat-divider></mat-divider>
+    <p fxLayoutAlign="end">
+        Total charges: {{invoice.total | currency}}
+    </p>
+
+</div>
+
+<br />
+
+<div mat-dialog-actions align="end">
+    <button mat-button matDialogClose="cancel">Cancel</button>
+    <button mat-raised-button matDialogClose="confirm" color="primary">Confirm Order</button>
+</div>
+
+<!--End of HTML page-->

@@ -7,3 +7,13 @@
 ; Description: E2E MEAN Stack Application
 ;===========================================
 */
+
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+let roleSchema = new Schema({
+  text: { type: String, unique: true },
+  isDisabled: { type: Boolean, default: false }
+});
+
+module.exports = mongoose.model('Role', roleSchema);

@@ -13,8 +13,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteRecordDialogComponent } from 'src/app/shared/delete-record-dialog/delete-record-dialog.component';
-import { User } from 'src/app/shared/user.interface';
-import { UserService } from 'src/app/shared/user.service.service';
+import { User } from 'src/app/shared/interfaces/user.interface';
+import { UserService } from 'src/app/shared/services/user.service.service';
 import { UserDetailsComponent } from '../user-details/user-details.component';
 
 @Component({
@@ -25,7 +25,7 @@ import { UserDetailsComponent } from '../user-details/user-details.component';
 export class UserListComponent implements OnInit {
 
   users: User[];
-  displayedColumns: string[] = ['userName','firstName','lastName','phoneNumber','address','email','functions'];
+  displayedColumns: string[] = ['userName','firstName','lastName','phoneNumber','address','email', 'role', 'functions'];
 
   constructor(private dialog: MatDialog, private userService: UserService) {
 
@@ -64,29 +64,12 @@ export class UserListComponent implements OnInit {
       }
     })
   }
-  /*openCreateUserDialog() {
-    const dialogRef = this.dialog.open(UserCreateComponent, {
-      disableClose: true
-    })
-
-    dialogRef.afterClosed().subscribe( () => this.userService.findAllUsers() );
-    dialogRef.afterClosed().subscribe(data => {
-      if (data) {
-        this.userService.findAllUsers().subscribe(res => {
-          this.users = res.data;
-          console.log(this.users);
-        }, err => {
-          console.log(err)
-        })
-      }
-    })
-  }*/
 
   delete(userId, recordId) {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
         recordId,
-        dialogHeader: 'Delete Record Dialog',
+        dialogHeader: 'Delete User',
         dialogBody: `Are you sure you want to delete user ${recordId}?`
       },
       disableClose: true,

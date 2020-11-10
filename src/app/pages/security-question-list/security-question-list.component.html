@@ -1,11 +1,9 @@
-<!--Security Questions List html page-->
-
 <div fxLayout="column" class="card">
     <mat-card>
 
         <mat-card-title>Security Questions Configuration</mat-card-title>
         <mat-card-subtitle>
-            <button mat-raised-button routerLink="/security-questions/create/new"  color="accent" style="margin:20px;">Create</button>
+            <button mat-raised-button routerLink="/security-questions/create/new" color="accent" style="margin:20px;">Create</button>
         </mat-card-subtitle>
 
         <mat-card-content *ngIf="securityQuestions">
@@ -22,11 +20,11 @@
                 <ng-container matColumnDef="functions">
                     <th mat-header-cell *matHeaderCellDef>Functions</th>
                     <td mat-cell *matCellDef="let element">
-                      <button mat-icon-button (click)="edit(element._id, element)">
-                        <mat-icon color="primary">edit</mat-icon>
+                        <button mat-icon-button (click)="edit(element._id, element)">
+                        <mat-icon color="accent">edit</mat-icon>
                       </button>
-                      <button mat-icon-button (click)="delete(element.text, element._id)">
-                        <mat-icon color="primary">delete</mat-icon>
+                        <button mat-icon-button (click)="delete(element.text, element._id)">
+                        <mat-icon color="accent">delete</mat-icon>
                       </button>
                     </td>
                 </ng-container>
@@ -38,4 +36,3 @@
         </mat-card-content>
     </mat-card>
 </div>
-<!--End Page-->

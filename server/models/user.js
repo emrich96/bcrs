@@ -8,6 +8,12 @@
 ;===========================================
 */
 
+
+/*Model for user form. 
+Connected to users collections in mongoDB database. 
+Accepted data is in parameters. 
+*/
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const UserRoleSchema = require('../schemas/user-role');
