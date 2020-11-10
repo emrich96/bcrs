@@ -25,11 +25,11 @@ export class RoleDetailsComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<RoleDetailsComponent>, @Inject(MAT_DIALOG_DATA) data) {
     this.roleData = data.roleData
-   }
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
     console.log(this.roleData.text);
-    this.form = this.fb.group({
+    this.form = new FormGroup({
       text: new FormControl(this.roleData.text, Validators.required)
     });
   }

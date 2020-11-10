@@ -52,7 +52,7 @@ export class RoleListComponent implements OnInit {
       if (data) {
         console.log(data)
         this.roleService.updateRole(id, data).subscribe(() => {
-          console.log('role');
+          console.log('role updated');
           this.roleService.findAllRoles().subscribe(res => {
             this.roles = res.data;
             console.log(this.roles);
