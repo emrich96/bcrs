@@ -45,6 +45,7 @@ export class SigninComponent implements OnInit {
       userName,
       password
     }).subscribe(res => {
+      console.log(res);
       console.log(res['data']);
       if (res['data'].userName) {
         // user is authenticated adn we can grant them access
@@ -53,7 +54,7 @@ export class SigninComponent implements OnInit {
       }
     }, err => {
       console.log(err);
-      this.errorMessage = err.message;
+      this.errorMessage = err;
     });
   }
 

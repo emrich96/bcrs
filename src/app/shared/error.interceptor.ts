@@ -21,6 +21,8 @@ export class ErrorInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(catchError(err => {
 
+      console.log('Interceptor error: ', err.error)
+
       if([404].indexOf(err.status) !== -1) {
         this.router.navigate(['/session/404']);
       }
@@ -31,7 +33,7 @@ export class ErrorInterceptor implements HttpInterceptor {
 
       // Otherwise, catch the error and throw
       const error = err.error.message || err.statusText;
-      return throwError;
+      return throwError(error);
     }));
   }
 }
