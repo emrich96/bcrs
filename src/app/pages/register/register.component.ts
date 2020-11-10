@@ -97,12 +97,13 @@ export class RegisterComponent implements OnInit {
       email: contactInformation.email,
       selectedSecurityQuestions: selectedSecurityQuestions
     }).subscribe(res => {
+      debugger;
       if (res['data']) {
         this.cookieService.set('sessionUser', credentials.userName, 1);
         this.router.navigate(['/']);
       } else {
         // user is not authenticated and need to return error
-        this.errorMessage = res['text'];
+        this.errorMessage = res['message'];
       }
     }, err => {
       console.log(err);
