@@ -121,7 +121,7 @@ router.put('/:id', async(req, res) => {
                 })
 
                 user.role.set({
-                  role: req.body.role
+                  text: req.body.role
                 })
 
                 user.save(function(err, savedUser) {
