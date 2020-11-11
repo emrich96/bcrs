@@ -72,15 +72,15 @@ export class RegisterComponent implements OnInit {
     const selectedSecurityQuestions = [
       {
         questionText: securityQuestions.securityQuestion1,
-        answerText: securityQuestions.answerToSecurityQuestion1
+        answerText: securityQuestions.answerToSecurityQuestion1.trim()
       },
       {
         questionText: securityQuestions.securityQuestion2,
-        answerText: securityQuestions.answerToSecurityQuestion2
+        answerText: securityQuestions.answerToSecurityQuestion2.trim()
       },
       {
         questionText: securityQuestions.securityQuestion3,
-        answerText: securityQuestions.answerToSecurityQuestion3
+        answerText: securityQuestions.answerToSecurityQuestion3.trim()
       },
     ];
     console.log('contact info: ', contactInformation)
