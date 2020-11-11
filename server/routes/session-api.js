@@ -101,8 +101,8 @@ router.post('/register', async(req, res) => {
           })
         } else {
           console.log('The provided username already exists in our system');
-          const userExistsErrorResponse = new ErrorResponse(500, "User already exists in our system", err);
-          res.status(500).send(userExistsErrorResponse.toObject());
+          const userExistsErrorResponse = new BaseResponse(200, "User Name already exists. Please select another User Name", err);
+          res.status(200).send(userExistsErrorResponse.toObject());
         }
       }
     })
@@ -118,8 +118,8 @@ router.get('/verify/users/:userName', async (req, res) => {
   try {
     User.findOne({'userName': req.params.userName}, function(err, user){
       if (err) {
-        console.log(err);
-        const verifyUserMongoErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+        console.log('Verify Username error: ', err);
+        const verifyUserMongoErrorResponse = new ErrorResponse(500, 'Internal server error', err.message);
         res.status(500).send(verifyUserMongoErrorResponse.toObject());
       } else {
         console.log(user);
@@ -129,8 +129,8 @@ router.get('/verify/users/:userName', async (req, res) => {
     })
   } catch (e) {
     console.log(e);
-      const verifyUserCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
-      res.status(500).send(verifyUserCatchErrorResponse.toObject());
+    const verifyUserCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(verifyUserCatchErrorResponse.toObject());
   }
 });
 

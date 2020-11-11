@@ -20,6 +20,7 @@ import { Router } from '@angular/router';
 })
 export class VerifyUserNameComponent implements OnInit {
   form: FormGroup;
+  errorMessage: string;
 
   constructor(private http: HttpClient, private fb: FormBuilder, private router: Router) { }
 
@@ -33,11 +34,14 @@ export class VerifyUserNameComponent implements OnInit {
     const username = this.form.controls['username'].value;
 
     this.http.get('/api/session/verify/users/' + username).subscribe(res => {
-      if (res) {
+      if (res['data']) {
         this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
+      } else {
+        this.errorMessage = "The user name does not match our records. Please try again";
       }
     }, err => {
       console.log(err);
+      this.errorMessage = err;
     })
   }
 }

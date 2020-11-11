@@ -20,7 +20,7 @@ import { SelectedSecurityQuestion } from '../../shared/interfaces/selected-secur
   styleUrls: ['./verify-security-questions.component.css']
 })
 export class VerifySecurityQuestionsComponent implements OnInit {
-  errorText: string;
+  errorMessage: string;
   selectedSecurityQuestions: SelectedSecurityQuestion;
   question1: string;
   question2: string;
@@ -79,7 +79,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
       if(res['message'] === 'success') {
         this.router.navigate(['session/reset-password'], {queryParams: {isAuthenticated: 'true', username: this.username}, skipLocationChange: true})
       } else {
-        this.errorText = "The security questions were not answered correctly"
+        this.errorMessage = "The security questions were not answered correctly"
         console.log('unable to verify security questions')
       }
     });

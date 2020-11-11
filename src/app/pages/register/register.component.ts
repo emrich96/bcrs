@@ -61,6 +61,7 @@ export class RegisterComponent implements OnInit {
         ])
       }),
     });
+    console.log(this.registrationForm)
   }
 
   register(form) {
@@ -71,15 +72,15 @@ export class RegisterComponent implements OnInit {
     const selectedSecurityQuestions = [
       {
         questionText: securityQuestions.securityQuestion1,
-        answerText: securityQuestions.answerToSecurityQuestion1
+        answerText: securityQuestions.answerToSecurityQuestion1.trim()
       },
       {
         questionText: securityQuestions.securityQuestion2,
-        answerText: securityQuestions.answerToSecurityQuestion2
+        answerText: securityQuestions.answerToSecurityQuestion2.trim()
       },
       {
         questionText: securityQuestions.securityQuestion3,
-        answerText: securityQuestions.answerToSecurityQuestion3
+        answerText: securityQuestions.answerToSecurityQuestion3.trim()
       },
     ];
     console.log('contact info: ', contactInformation)
@@ -96,12 +97,13 @@ export class RegisterComponent implements OnInit {
       email: contactInformation.email,
       selectedSecurityQuestions: selectedSecurityQuestions
     }).subscribe(res => {
+      debugger;
       if (res['data']) {
         this.cookieService.set('sessionUser', credentials.userName, 1);
         this.router.navigate(['/']);
       } else {
         // user is not authenticated and need to return error
-        this.errorMessage = res['text'];
+        this.errorMessage = res['message'];
       }
     }, err => {
       console.log(err);

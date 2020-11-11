@@ -1,14 +1,11 @@
 <div fxLayout="column" class="card">
   <mat-card>
 
-    <mat-card-title style="padding-top: 30px;">User Configuration</mat-card-title>
-    <mat-card-subtitle>
-      <button mat-raised-button routerLink="/users/create/new" color="accent" style="margin:20px;">Create</button>
-    </mat-card-subtitle>
+    <mat-card-title style="padding-top: 30px; margin-bottom: 35px;">User Configuration</mat-card-title>
 
     <mat-card-content *ngIf="users">
 
-      <table mat-table [dataSource]="users" class="mat-elevation-z8">
+      <table mat-table [dataSource]="users">
 
         <ng-container matColumnDef="userName">
           <th mat-header-cell *matHeaderCellDef>Username</th>

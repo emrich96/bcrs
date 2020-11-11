@@ -57,10 +57,6 @@ const routes: Routes = [
         canActivate: [RoleGuard]
       },
       {
-        path: 'users/create/new',
-        component: UserCreateComponent
-      },
-      {
         path: 'security-questions',
         component: SecurityQuestionListComponent,
         canActivate: [RoleGuard]

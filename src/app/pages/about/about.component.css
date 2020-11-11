@@ -1,14 +1,15 @@
 .title {
     text-align: center;
     font-size: 200%;
+    padding-top: 30px;
 }
 
 .aboutContainer {
-    padding-right: 40%;
+  padding: 0 20% 0 20%;
 }
 
 .contactContainer {
-    padding-right: 40%;
+  padding: 20px 20% 0 20%;
 }
 
 hr {
