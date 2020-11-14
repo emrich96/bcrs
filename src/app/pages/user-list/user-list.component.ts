@@ -57,6 +57,7 @@ export class UserListComponent implements OnInit {
           this.userService.findAllUsers().subscribe(res => {
             this.users = res.data;
             console.log(this.users);
+            location.reload();
           }, err => {
             console.log(err)
           })
