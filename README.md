@@ -1,3 +1,5 @@
+Project ended 11/14/2020
+
 # Contributors
 Mike Goldberg
 Ashliegh Lyman
